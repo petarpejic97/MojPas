@@ -1,37 +1,29 @@
 body, html {
-    height: 100%;
-}
-  
-body{
-    background-image: url("http://localhost/MojPas/images/blurback.jpg");
+    background-image: url("http://localhost/MojPas/images/back2.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
 }
-
+  
 body > nav > div > ul > li > a{
-    color: rgb(155, 155, 155)!important;
+    color: rgb(255, 255, 255)!important;
     margin-right: 15px;
-}
-
-.bg-dark{
-    background-color: #252525!important;
 }
 
 .navbar{
     min-height: 50px!important;
     padding:10px 0 10px 0!important;
+    background-color: #043957;
 }
-
 .fas{
     margin-right: 5px;
 }
 
 body > nav > div > ul > li > a:hover{
     transition: ease 0.2s;
-    color: azure!important;
     text-decoration: none!important;
+    border-bottom: 3px solid white;
 }
 
 body > nav > div > ul.nav.navbar-nav.navbar-right > li > a > span > i{
@@ -44,10 +36,11 @@ body > div.container > div > div{
 
 .active a{
     color: white!important;
+    border-bottom: 3px solid white;
 }
 
 #form-wrapper{
-    background-color: #000000c4;
+    background-color: rgba(255, 255, 255, 0.8);
     max-width: 900px;
 }
 
@@ -55,7 +48,7 @@ body > div.container > div > div{
     font-size: large;
     padding:10px 0 10px 0;
     text-align: center;
-    color:white;
+    color:black;
 }
 
 .panel-body{
@@ -63,7 +56,7 @@ body > div.container > div > div{
 }
 
 .form-group {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #register-form > div.row > div> div > label{
@@ -71,19 +64,16 @@ body > div.container > div > div{
 }
 .form-control {
     background-color: transparent;
-    color: white;
     border:none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid black;
     border-radius: 0;
 }
 .form-control:focus, .form-control:active {
     background: transparent;
-    color:white;
     box-shadow: none;
 }
 @-webkit-keyframes autofill {
     0%,100% {
-        color: white;
         background: transparent;
     }
 }
@@ -98,13 +88,13 @@ option{
 }
 
 #submitbtn {
+    color: #043957;
     background-color: transparent;
-    border: 1px solid white;
-    font-size: 1em;
+    border: 1px solid #043957;
     border-radius: 0;
-    width: 150px;
+    font-size: 1rem!important;
 }
 #submitbtn:hover {
-    background-color: white;
-    color:black
+    background-color: #043957;
+    color:white
 }

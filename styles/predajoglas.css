@@ -1,73 +1,60 @@
 body, html {
-    height: 100%;
-    background-image: url("http://localhost/MojPas/images/blurback.jpg");
+    background-image: url("http://localhost/MojPas/images/back2.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
   }
 body > nav > div > ul > li > a{
-    color: rgb(155, 155, 155)!important;
+    color: rgb(255, 255, 255)!important;
     margin-right: 15px;
-}
-.bg-dark{
-    background-color: #252525!important;
+    text-decoration: none;
 }
 .navbar{
     min-height: 50px!important;
     padding:10px 0 10px 0!important;
+    background-color: #043957;
 }
 .fas{
     margin-right: 5px;
 }
-body > nav > div > ul > li > a{
-    color: rgb(155, 155, 155)!important;
-    margin-right: 15px;
-}
+
 body > nav > div > ul > li > a:hover{
     transition: ease 0.2s;
-    color: azure!important;
     text-decoration: none!important;
+    border-bottom: 3px solid white;
 }
-body > nav > div > ul.nav.navbar-nav.navbar-right > li > a > span > i{
-
-    margin-right: 5px;
-
+.active a{
+    color: white!important;
+    border-bottom: 3px solid white;
 }
 body > div.container > div > div{
     margin : 20px auto;
     padding:0;
-    background-color: #000000ad;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .panel-heading{
     padding:10px 0 10px 0;
     text-align: center;
-    color:white;
 }
 .panel-body{
     padding:10px 15px;
 }
 .submitBtn:hover{
-    background-color: white;
-    color: black;
-    border: 1px solid white;
+    background-color: rgb(4, 57, 87);
+    color: white;
+    border: 1px solid rgb(4, 57, 87);
 }
 .submitBtn{
-    color:white;
+    color:#043957;
     background-color: transparent;
     font-size: 1em;
     width:-webkit-fill-available;
     border-radius: 0;
-    border: 1px solid white;
-}
-.active a{
-    color: white!important;
+    border: 1px solid #043957;
 }
 
-.form-control{
-    width: -webkit-fill-available;
-}
 .custom-combobox {
     position: relative;
     display: inline-block;
@@ -94,43 +81,29 @@ body > div.container > div > div{
 .container{
     position: relative;
 }
-.custom-control-label{
-    color:white;
-}
-body{
-   
-}
 .form-control {
     background-color: transparent;
-    color: white;
     border:none;
     border-bottom: 1px solid;
     border-radius: 0;
+    width: -webkit-fill-available;
 }
 .form-control:focus, .form-control:active {
     background: transparent;
-    color:white;
     box-shadow: none;
 }
 @-webkit-keyframes autofill {
     0%,100% {
-        color: white;
         background: transparent;
     }
 }
 #opis{
-    border:1px solid white
+    border:1px solid
 }
 .form-control:-webkit-autofill {
     -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
     -webkit-animation-name: autofill;
     -webkit-animation-fill-mode: both;
-}
-#exampleFormControlTextarea1{
-    border:1px solid white;
-}
-.form-group > label{
-    color:white;
 }
 /* stvaranje okvira oko slike 
 brisanje overloadanog */
@@ -142,7 +115,7 @@ input[type="file"] {
     position: relative;
     float: left;
     margin-right: 15px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid ;
     padding: 0;
     height: 330px;
     width: 260px;
@@ -196,4 +169,9 @@ input[type="file"] {
 #formalert{
     text-align: center!important;
     font-size: 100%;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fbca70;
+    border-color: #fbca70;
+    background-color: #fbca70;
 }
