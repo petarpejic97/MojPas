@@ -1,0 +1,95 @@
+body, html {
+    height: 100%;
+  }
+body > nav > div > ul > li > a{
+    color: rgb(155, 155, 155)!important;
+    margin-right: 15px;
+}
+.bg-dark{
+    background-color: #252525!important;
+}
+.navbar{    
+    min-height: 50px!important;
+    padding:10px 0 10px 0!important;
+}
+.fas{
+    margin-right: 5px;
+}
+body > nav > div > ul > li > a:hover{
+    transition: ease 0.2s;
+    color: azure!important;
+    text-decoration: none!important;
+}
+body > div.container > div > div{
+    left: 50%;
+    top: 50%;
+    max-width: 400px;
+    padding: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.panel-heading{
+    background-color: #000000ad;
+    padding:10px 0 10px 0;
+    text-align: center;
+    color:white;
+}
+
+.panel-body{
+    padding:10px 15px;
+    background-color: transparent;
+    background-color: #000000ad!important;
+}
+#submitbtn{
+    background-color: transparent;
+    border:1px solid white;
+    font-size: 1em;
+    width: 150px;
+    border-radius: 0;
+}
+#submitbtn:hover{
+    background-color: white;
+    color:black;
+    border:1px solid white;
+}
+.active a{
+    color: white!important;
+}
+body{
+    background-image: url("http://localhost/MojPas/images/blurback.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+.panel{
+    background-color: transparent;
+}
+.form-control {
+    background-color: transparent;
+    color: white;
+    border:none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+body > div > div > div > div > div.panel-body > form > div > label{
+    color:white;
+}
+.form-control:focus, .form-control:active {
+    background: transparent;
+    color:white;
+    box-shadow: none;
+}
+@-webkit-keyframes autofill {
+    0%,100% {
+        color: white;
+        background: transparent;
+    }
+}
+
+.form-control:-webkit-autofill {
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}

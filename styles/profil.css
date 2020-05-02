@@ -1,0 +1,76 @@
+body, html {
+    height: 100%;
+}
+  
+body{
+    background-image: url("http://localhost/MojPas/images/blurback.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+body > nav > div > ul > li > a{
+    color: rgb(155, 155, 155)!important;
+    margin-right: 15px;
+}
+
+.bg-dark{
+    background-color: #252525!important;
+}
+
+.navbar{
+    min-height: 50px!important;
+    padding:10px 0 10px 0!important;
+}
+
+.fas{
+    margin-right: 5px;
+}
+
+body > nav > div > ul > li > a:hover{
+    transition: ease 0.2s;
+    color: azure!important;
+    text-decoration: none!important;
+}
+
+body > nav > div > ul.nav.navbar-nav.navbar-right > li > a > span > i{
+    margin-right: 5px;
+}
+
+body > div.container > div > div{
+    margin : 20px auto;
+}
+
+.active a{
+    color: white!important;
+}
+
+#form-wrapper{
+    background-color: #000000c4;
+    max-width: 900px;
+}
+.form-control {
+    background-color: transparent;
+    color: white;
+    border:none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+.form-control:focus, .form-control:active {
+    background: transparent;
+    color:white;
+    box-shadow: none;
+}
+@-webkit-keyframes autofill {
+    0%,100% {
+        color: white;
+        background: transparent;
+    }
+}
+
+.form-control:-webkit-autofill {
+    /* Safari support - any positive time runs instantly */
+   -webkit-animation-name: autofill;
+   -webkit-animation-fill-mode: forwards;
+}
