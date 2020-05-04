@@ -1,5 +1,5 @@
 body, html {
-    background-image: url("http://localhost/MojPas/images/back2.jpg");
+    background-image: url("http://localhost/MojPas/images/blur18.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
@@ -15,6 +15,7 @@ body > nav > div > ul > li > a{
     min-height: 50px!important;
     padding:10px 0 10px 0!important;
     background-color: #043957;
+    z-index: 1;
 }
 .fas{
     margin-right: 5px;
@@ -40,21 +41,43 @@ body > div.container > div > div{
 }
 
 #form-wrapper{
-    background-color: rgba(255, 255, 255, 0.8);
-    max-width: 900px;
+
+    padding:0;
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    max-height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
 }
 
 .panel-heading{
     font-size: large;
-    padding:10px 0 10px 0;
+    padding: 2rem 0 2rem 0;
     text-align: center;
     color:black;
 }
 
 .panel-body{
     padding:10px 15px;
+    
 }
-
+.panel-primary{
+    width: 50%;
+    float: left;
+}
+.image-wrapper{
+    width: 50%;
+    float: right;
+    height: 500px;
+}
+.image-wrapper > img{
+    height: -webkit-fill-available;
+    display: block;
+    width: -webkit-fill-available;
+}
 .form-group {
     color: rgb(0, 0, 0);
 }
@@ -62,12 +85,38 @@ body > div.container > div > div{
 #register-form > div.row > div> div > label{
     margin-bottom: 0;
 }
-.form-control {
+.form-group {
+    position: relative;
+    line-height: 44px;
+    margin-bottom: 2rem;
+}
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(133, 133, 133);
+    transition: 0.2s all;
+    cursor: text;
+  }
+  input {
     background-color: transparent;
-    border:none;
+    width: 100%;
+    border: 0;
+    outline: 0;
     border-bottom: 1px solid black;
     border-radius: 0;
-}
+  }
+  input:invalid {
+    outline: 0; 
+  }
+
+input:focus~label,input:valid~label {
+    font-size: 14px;
+    top: -24px;
+    color: rgb(4, 57, 87);
+  }
+
 .form-control:focus, .form-control:active {
     background: transparent;
     box-shadow: none;

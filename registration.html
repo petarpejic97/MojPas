@@ -47,108 +47,36 @@
                         <div class="panel-heading">Molimo unesite svoje podatke</div>
                         <div class="panel-body">
                             <form role="Form" method="post" id="register-form" action="" accept-charset="UTF-8">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label for="firstname">Unesite ime</label>
-                                            <input type="text" id="firstname" class="form-control" name="firstname">
-                                            <div class="invalid-feedback " id="firstnamealert">
-                                                Molimo Vas popunite polje.
-                                              </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label for="lastname">Unesite prezime</label>
-                                            <input type="text" id="lastname" class="form-control" name="lastname">
-                                            <div class="invalid-feedback" id="lastnamealert">
-                                                Molimo Vas popunite polje.
-                                              </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="form-group">
-                                            <label for="nickname">Unesite nadimak</label>
-                                            <input type="text" id="nickname" class="form-control" name="nickname">
-                                            <div class="invalid-feedback" id="nicknamealert">
-                                                Molimo Vas popunite polje.
-                                              </div>
+                                <div class="form-group">
+                                    <input type="text" id="nickname" name="nickname" required />
+                                    <label for="nickname" id="nicknamelabel">Unesite nadimak</label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" id="email" name="email" required/>
+                                    <label for="email" id="emaillabel" >Unesite e-mail adresu</label>
 
-                                        </div>
-                                    </div>
                                 </div>
+                                
                                 <div class="form-group">
-                                    <label for="states">Odaberite državu</label>
-                                    <select id="states" class="form-control"  name="state">
-                                        <option value="">-- Odaberite državu --</option>
-                                        <option value="Hrvatska">Hrvatska</option>
-                                        <option value="BiH">BiH</option>
-                                        <option value="Srbija">Srbija</option>
-                                        <option value="Slovenija">Slovenija</option>
-                                        
-                                    </select>
-                                    <div class="invalid-feedback" id="statesalert">
-                                        Molimo Vas odaberite državu iz koje dolazite.
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="city">Odaberite grad </label>
-                                    <select id="city" class="form-control" name="city">
-                                      
-                                        <option value="">-- Odaberite grad --</option>
-                                    </select>
-                                    <div class="invalid-feedback" id="cityalert">
-                                        Molimo Vas odaberite grad iz kojeg dolazite.
-                                    </div>
+                                    <input type="password" id="password" name="password"  required>
+                                    <label for="password" id="passwordlabel">Unesite zaporku</label>
 
                                 </div>
                                 <div class="form-group">
-                                    <label for="gender">Odaberite spol</label>
-                                    <select id="gender" class="form-control" name="gender">
-                                        <option value="Muško">Muško</option>
-                                        <option value="Žensko">Žensko</option>
-                                        <option value="Ostalo">Ostalo</option>
-                                    </select>
-                                    <div class="invalid-feedback" id="genderalert">
-                                        Molimo Vas popunite polje.
-                                      </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Unesite e-mail adresu</label>
-                                    <input type="text" id="email" class="form-control" name="email" >
-                                    <div class="invalid-feedback" id="emailalert">
-                                        Molimo Vas popunite polje.
-                                      </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Unesite kontakt broj</label>
-                                    <input type="text" id="phone" class="form-control" name="phone" >
-                                    <div class="invalid-feedback" id="phonealert">
-                                        Molimo Vas popunite polje.
-                                      </div>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Unesite zaporku</label>
-                                    <input type="password" id="password" class="form-control" name="password" placeholder="">
-                                    <div class="invalid-feedback" id="passwordalert">
-                                        Molimo Vas popunite polje.
-                                      </div>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="confirmpassword">Podvrdite zaporku</label>
-                                    <input type="password" id="confirmpassword" class="form-control" name="confirmpassword" placeholder="">
-                                    <div class="invalid-feedback" id="confirmpasswordalert">
-                                        Molimo Vas popunite polje.
-                                      </div>
+                                    <input type="password" id="confirmpassword" name="confirmpassword" required />
+                                    <label for="confirmpassword" id="confirmpasswordlabel">Podvrdite zaporku</label>
 
                                 </div>
                                 <div class="form-group text-center">
                                     <button type="button" class="btn btn-primary btn-lg" id="submitbtn" name="submit" onclick=loadVariable()>Registracija</button>
                                 </div>
+                                
                             </form>
                         </div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="./images/jamie-street-1.jpg">
                     </div>
                 </div>
             </div>

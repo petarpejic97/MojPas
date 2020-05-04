@@ -1,20 +1,8 @@
 <?php 
 
-function conenctToDatabase(){
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname="web programiranje";
-    //create connecton
-    $conn = new mysqli($servername,$username,$password,$dbname);
+include 'connectToDatabase.php';
 
-    if($conn->connect_error)
-        die ("Connect filed " . $conn->connect_error);
-    else 
-        return $conn;
-}
-
-$conn = conenctToDatabase();
+$conn = openConnection();
 
 $email = $_POST['email'];
 
@@ -23,9 +11,9 @@ $sql = "SELECT email FROM users WHERE email = '".$email."'";
 $result = $conn->query($sql);
 
 if($result -> num_rows > 0){
-    echo "true";
+    echo 0;
 }else{
-    echo "false";
+    echo 1;
 }
 
 ?>

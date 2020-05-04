@@ -58,15 +58,13 @@
                                 <label for="file" class="custom-file-upload">
                                     <span id="tekstnaslici"><i class="fa fa-upload"></i> Učitajte sliku</span>
                                     <img id="output"/>
-                                    
                                 </label>
                                 <input type="file" class="form-control" id="file" name="file"  onchange="loadFile(event)" />
                                 
                             </div>
                             <div class="form-group">
+                                <input type="text" id="naslov" class="form-control" name="naslov" required>
                                 <label for="naslov">Naslov oglasa</label>
-                                <input type="text" id="naslov" class="form-control" name="naslov">
-                               
                             </div>
                             <div class="form-group">
                                 <label for="vrsta" >Vrsta pasmine</label>
@@ -93,7 +91,49 @@
                                 </div>
                                   
                             </div>
-                            
+                            <div>
+                                <label>Lokacija :</label>
+                            </div>
+                                <div class="row">
+                                
+                                        <div class="form-group col-lg-4">
+                                            <label for="states">Odaberite državu</label>
+                                            <select id="states" class="form-control"  name="state">
+                                                <option value="">-- Odaberite državu --</option>
+                                                <option value="Hrvatska">Hrvatska</option>
+                                                <option value="BiH">BiH</option>
+                                                <option value="Srbija">Srbija</option>
+                                                <option value="Slovenija">Slovenija</option>
+                                                
+                                            </select>
+                                            <div class="invalid-feedback" id="statesalert">
+                                                Molimo Vas odaberite državu iz koje dolazite.
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            <label for="city">Odaberite grad </label>
+                                            <select id="city" class="form-control" name="city">
+                                              
+                                                <option value="">-- Odaberite grad --</option>
+                                            </select>
+                                            <div class="invalid-feedback" id="cityalert">
+                                                Molimo Vas odaberite grad iz kojeg dolazite.
+                                            </div>
+        
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            <label for="city">Detalj</label>
+                                            <select id="city" class="form-control" name="city">
+                                              
+                                                <option value="">-- Odaberite grad --</option>
+                                            </select>
+                                            <div class="invalid-feedback" id="cityalert">
+                                                Molimo Vas odaberite grad iz kojeg dolazite.
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    
                             <div class="form-group">
                                 <label for="opis">Opis</label>
                                 <textarea class="form-control" id="opis" name="opis" rows="10"></textarea>

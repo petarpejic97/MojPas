@@ -1,11 +1,11 @@
 body, html {
-    background-image: url("http://localhost/MojPas/images/back2.jpg");
+    background-image: url("http://localhost/MojPas/images/blur18.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
   }
-  body > nav > div > ul > li > a{
+body > nav > div > ul > li > a{
     color: rgb(255, 255, 255)!important;
     margin-right: 15px;
 }
@@ -17,7 +17,7 @@ span > i {
     padding:10px 0 10px 0!important;
     background-color: rgb(4, 57, 87);
 }
- ul > li > a:hover{
+ul > li > a:hover{
     transition: ease 0.2s;
     text-decoration: none!important;
     border-bottom: 3px solid white;
@@ -36,8 +36,40 @@ body > div.container > div > div{
 }
 .panel{
     padding: 50px;
-    background-color: rgb(255, 255, 255,0.8);
+    background-color: rgb(255, 255, 255,0.9);
 }
+/*animation*/
+.form-group {
+    position: relative;
+    line-height: 44px;
+    margin-bottom: 2rem;
+}
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(133, 133, 133);
+    transition: 0.2s all;
+    cursor: text;
+  }
+input {
+    background-color: transparent;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid black;
+  }
+input:invalid {
+    outline: 0; 
+  }
+
+input:focus~label,input:valid~label {
+    font-size: 14px;
+    top: -24px;
+    color: rgb(4, 57, 87);
+  }
+  /*ZAVRSAVA */
 .panel-heading{
     background-color: transparent;
     padding:10px 0 30px 0;
@@ -49,7 +81,6 @@ body > div.container > div > div{
     color: black;
 }
 #submitbtn{
-    margin-top: 30px;
     background-color: transparent;
     border:1px solid rgb(4, 57, 87);
     color: rgb(4, 57, 87);
@@ -62,27 +93,17 @@ body > div.container > div > div{
     color:white;
     border:1px solid rgb(4, 57, 87);
 }
-
-.form-control {
-    background-color: transparent;
-    border:none;
-    border-bottom: 1px solid;
-    border-radius: 0;
-}
-
-.form-control:focus, .form-control:active {
-    background: transparent;
-    color:white;
-    box-shadow: none;
+ div.panel-body > form > div.form-group.text-center{
+    margin-bottom: 10px;
 }
 @-webkit-keyframes autofill {
     0%,100% {
-        color: white;
+        color: black;
         background: transparent;
     }
 }
 
-.form-control:-webkit-autofill {
+input:-webkit-autofill {
     -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
     -webkit-animation-name: autofill;
     -webkit-animation-fill-mode: both;
