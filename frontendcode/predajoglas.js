@@ -40,7 +40,38 @@ $(document).ready(function ()
 {
     autocomplete(document.getElementById("vrsta"), dogs);
     
-    /*$("#states").change(function () 
+    loadLocationFields()
+    
+  
+    if( localStorage.getItem("login")=="no"){
+        $(':input[type="submit"]').prop("disabled",true)
+        $("#loginalert").css("display","block");
+    }
+    else{
+        $("#loginalert").css("display","none");
+    }
+    // Submit form data via Ajax
+    $("#oglas-form").on('submit', function(e){
+      loadVariable();
+        e.preventDefault();
+        e.stopPropagation();
+  
+        if(filled == true){
+          $.ajax({
+            type: "POST",
+            url: "./backend/predajoglas.php",
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+            success:function(response){
+              console.log(response)
+            }
+          });
+        }
+    });
+});
+function loadLocationFields(){
+  $("#states").change(function () 
     {
         var val = $(this).val();
 
@@ -95,37 +126,8 @@ $(document).ready(function ()
             <option value='Trbovlje'>  Trbovlje </option>\
             <option value='	Nova Gorica'>  Nova Gorica </option>");
         }
-    });*/
-  
-    if( localStorage.getItem("login")=="no"){
-        $(':input[type="submit"]').prop("disabled",true)
-        $("#loginalert").css("display","block");
-    }
-    else{
-        $("#loginalert").css("display","none");
-    }
-    // Submit form data via Ajax
-    $("#oglas-form").on('submit', function(e){
-      loadVariable();
-        e.preventDefault();
-        e.stopPropagation();
-  
-        if(filled == true){
-          $.ajax({
-            type: "POST",
-            url: "./backend/predajoglas.php",
-            data: new FormData(this),
-            processData: false,
-            contentType: false,
-            success:function(response){
-              console.log(response)
-              
-            }
-          });
-        }
     });
-});
-
+}
 function loadVariable(){
     naslov=$("#naslov").val();
     vrsta=$("#vrsta").val();
@@ -133,17 +135,22 @@ function loadVariable(){
     cijepljenje=$('input[name=customRadio]:checked', '#oglas-form').val()
     opis=$("#opis").val();
     file=$("#file").val();
-
+    drzava=$("#states").val();
+    grad=$("#city").val();
+    detaljolokaciji=$("#detail").val();
    
     checkFields()
 }
 
 function checkFields(){
-  if(file=="" || naslov=="" || vrsta=="" || cijena=="" || cijepljenje==undefined  || opis=="" ){
+  if(naslov=="" || cijena=="" || opis=="" || drzava=="" || grad=="" ){
       $("#formalert").css("display","block");
   }
-  else
-      $("#formalert").css("display","none");
+  else{
+    $("#formalert").css("display","none");
+    filled = true
+  }
+    
 
 }
 function logout(){

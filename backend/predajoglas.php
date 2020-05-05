@@ -2,7 +2,7 @@
 
 include 'connectToDatabase.php';
 
-$conn = openConnection();
+
 session_start(); 
 $uploadDir = 'C:/xampp/htdocs/MojPas/uploads/'; 
 $response = array( 
@@ -17,16 +17,17 @@ if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['file'])){
     $cijena = $_POST['cijena']; 
     $cijepljen = $_POST['customRadio']; 
     $opis = $_POST['opis']; 
-     
+    $drzava = $_POST['drzava'];
+    $grad = $_POST['grad'];
+    $detaljlokacija = $_POST['detaljlokacija'];
     // Check whether submitted data is not empty 
-    if(!empty($naslov) && !empty($cijena)&&!empty($vrsta) && !empty($cijepljen)){ 
+    if(!empty($naslov) && !empty($cijena)){ 
         // Validate email 
         $uploadStatus = 1; 
             
         // Upload file 
         $uploadedFile = ''; 
         if(!empty($_FILES["file"]["name"])){ 
-            
             // File path config 
             $fileName = basename($_FILES["file"]["name"]); 
             $targetFilePath = $uploadDir . $fileName; 
@@ -35,7 +36,6 @@ if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['file'])){
             // Allow certain file formats 
             $allowTypes = array('pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'); 
             if(in_array($fileType, $allowTypes)){ 
-                
                 // Upload file to the server 
                 if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){ 
                     $uploadedFile = $fileName; 
@@ -52,10 +52,10 @@ if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['file'])){
              
             if($uploadStatus == 1){ 
                 // Include the database config file 
-                $conn = connectToDatabase(); 
+                $conn = openConnection();
                 // Insert form data in the database 
-                $insert = $conn->query("INSERT INTO advertisement (title,sort,price,vacinnation,description,filename,owner) VALUES ('".$naslov."','".$vrsta."','".$cijena."','".$cijepljen."','".$opis."','".$fileName."','".$_SESSION["nickname"]."')"); 
-          
+                $insert = $conn->query("INSERT INTO advertisement (title,sort,price,vacinnation,description,state,city,locationDetail,filename,owner) VALUES ('".$naslov."','".$vrsta."','".$cijena."','".$cijepljen."','".$opis."','".$drzava."','".$grad."','".$detaljlokacija."','".$fileName."','".$_SESSION["nickname"]."')"); 
+                echo $insert;
                 if($insert){ 
                     $response['status'] = 1; 
                     $response['message'] = 'Form data submitted successfully!'; 

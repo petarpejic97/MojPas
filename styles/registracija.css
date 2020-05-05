@@ -20,7 +20,13 @@ body > nav > div > ul > li > a{
 .fas{
     margin-right: 5px;
 }
-
+#dropdown > div > a:hover{
+    background-color:#fbca70!important;
+}
+.nav-link {
+    display: initial;
+    padding: 0;
+}
 body > nav > div > ul > li > a:hover{
     transition: ease 0.2s;
     text-decoration: none!important;
@@ -64,13 +70,7 @@ body > div.container > div > div{
     padding:10px 15px;
     
 }
-.panel-primary{
-    width: 50%;
-    float: left;
-}
 .image-wrapper{
-    width: 50%;
-    float: right;
     height: 500px;
 }
 .image-wrapper > img{

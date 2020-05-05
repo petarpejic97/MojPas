@@ -24,17 +24,19 @@
                 <li><a href="./index.html">Početna</a></li>
                 <li><a href="">Pregled oglasa</a></li>
                 <li class="active"><a href="./predajoglas.html">Predaj oglas</a></li>
-                <li><a href=".profil.html">Profil</a></li>
 
             </ul>
 
             <ul class="nav navbar-nav navbar-right" >
-                <li><button id="btnlogout" style="display:none; 
-                    background-color: transparent;
-                    border: 2px solid white;
-                    color: white;
-                    width: 100px;
-                    margin-right: 10px;" onclick="logout()">Logout</button></li>
+                <li class="nav-item dropdown" id="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Nadimak
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="./profil.html">Profil</a>
+                      <a class="dropdown-item" onclick=logout() href="#">Odjava</a>
+                    </div>
+                  </li>
                 <li id="login"><a href="./login.html"><span><i class="fas fa-sign-in-alt"></i>Prijava</span></a></li>
                 <li id="registration"><a href="./registration.html"><span><i class="fas fa-user"></i>Registracija</a></span></li>
             </ul>
@@ -46,8 +48,11 @@
             <div class="col-lg-10 id=form-wrapper">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Napravi svoj oglas !
+                        <div class="invalid-feedback " id="formalert">
+                            <i class='fas fa-ban' style='font-size:24px;color:white'></i>Molimo Vas popunite polja označena zvjezdicom.
+                          </div>
                         <div class="invalid-feedback " id="loginalert">
-                            Za kreiranje oglasa morate biti prijavljeni!
+                            <i class='fas fa-exclamation-triangle' style='font-size:24px;color:white'></i>Za kreiranje oglasa morate biti prijavljeni!
                           </div>
                     </div>
                     
@@ -58,13 +63,15 @@
                                 <label for="file" class="custom-file-upload">
                                     <span id="tekstnaslici"><i class="fa fa-upload"></i> Učitajte sliku</span>
                                     <img id="output"/>
+                                    
                                 </label>
                                 <input type="file" class="form-control" id="file" name="file"  onchange="loadFile(event)" />
                                 
                             </div>
                             <div class="form-group">
-                                <input type="text" id="naslov" class="form-control" name="naslov" required>
-                                <label for="naslov">Naslov oglasa</label>
+                                <label for="naslov">Naslov oglasa *</label>
+                                <input type="text" id="naslov" class="form-control" name="naslov">
+                               
                             </div>
                             <div class="form-group">
                                 <label for="vrsta" >Vrsta pasmine</label>
@@ -74,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="cijena">Cijena (€)</label>
+                                <label for="cijena">Cijena (€) *</label>
                                 <input type="text" id="cijena" class="form-control" name="cijena">
                                 
                             </div>
@@ -94,55 +101,40 @@
                             <div>
                                 <label>Lokacija :</label>
                             </div>
-                                <div class="row">
-                                
-                                        <div class="form-group col-lg-4">
-                                            <label for="states">Odaberite državu</label>
-                                            <select id="states" class="form-control"  name="state">
-                                                <option value="">-- Odaberite državu --</option>
-                                                <option value="Hrvatska">Hrvatska</option>
-                                                <option value="BiH">BiH</option>
-                                                <option value="Srbija">Srbija</option>
-                                                <option value="Slovenija">Slovenija</option>
-                                                
-                                            </select>
-                                            <div class="invalid-feedback" id="statesalert">
-                                                Molimo Vas odaberite državu iz koje dolazite.
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label for="city">Odaberite grad </label>
-                                            <select id="city" class="form-control" name="city">
-                                              
-                                                <option value="">-- Odaberite grad --</option>
-                                            </select>
-                                            <div class="invalid-feedback" id="cityalert">
-                                                Molimo Vas odaberite grad iz kojeg dolazite.
-                                            </div>
-        
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <label for="city">Detalj</label>
-                                            <select id="city" class="form-control" name="city">
-                                              
-                                                <option value="">-- Odaberite grad --</option>
-                                            </select>
-                                            <div class="invalid-feedback" id="cityalert">
-                                                Molimo Vas odaberite grad iz kojeg dolazite.
-                                            </div>
-        
-                                        </div>
+                            <div class="row">
+                            
+                                    <div class="form-group col-lg-4">
+                                        <label for="states">Odaberite državu *</label>
+                                        <select id="states" class="form-control"  name="drzava">
+                                            <option value="">-- Odaberite državu --</option>
+                                            <option value="Hrvatska">Hrvatska</option>
+                                            <option value="BiH">BiH</option>
+                                            <option value="Srbija">Srbija</option>
+                                            <option value="Slovenija">Slovenija</option>
+                                            
+                                        </select>
                                     </div>
+                                    <div class="form-group col-lg-4">
+                                        <label for="city">Odaberite grad *</label>
+                                        <select id="city" class="form-control" name="grad">
+                                            
+                                            <option value="">-- Odaberite grad --</option>
+                                        </select>
+    
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <label for="detail">Detalji o lokaciji</label>
+                                        <input type="text" name="detaljlokacija" id="detail" class="form-control">                                    
+                                    </div>
+                                </div>
                                     
                             <div class="form-group">
-                                <label for="opis">Opis</label>
+                                <label for="opis">Opis *</label>
                                 <textarea class="form-control" id="opis" name="opis" rows="10"></textarea>
-                                <div class="invalid-feedback " id="formalert">
-                                    Molimo Vas popunite sva polja.
-                                  </div>
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="submit" class="btn submitBtn" value="SUBMIT"/>                            </div>
+                                <input type="submit" name="submit" class="btn submitBtn" value="SUBMIT"/>                            
+                            </div>
                         </form>
                     </div>
                 </div>

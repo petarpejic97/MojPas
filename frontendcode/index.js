@@ -2,8 +2,7 @@ var login;
 
 $(document).ready(function () 
 {
-    console.log("ulazim")
-    login= localStorage.getItem("login");
+login= localStorage.getItem("login");
 
     if(login == "yes"){
         $("#login").hide();
@@ -13,8 +12,12 @@ $(document).ready(function ()
 
 function logout(){
     localStorage.setItem("login","no")
-    $("#login").show();
     $("#btnlogout").hide();
+    $("#login").show();
+    
 
     location.reload();
+}
+function myScript(e){
+    alert(e.target.attributes.id.value);       
 }

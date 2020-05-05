@@ -1,76 +1,111 @@
 body, html {
-    height: 100%;
-}
-  
-body{
-    background-image: url("http://localhost/MojPas/images/blurback.jpg");
+    background-image: url("http://localhost/MojPas/images/back2.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
-}
-
+  }
+  /*Navigation bar */
 body > nav > div > ul > li > a{
-    color: rgb(155, 155, 155)!important;
+    color: rgb(255, 255, 255)!important;
     margin-right: 15px;
+    text-decoration: none;
 }
-
-.bg-dark{
-    background-color: #252525!important;
-}
-
 .navbar{
     min-height: 50px!important;
     padding:10px 0 10px 0!important;
+    background-color: #043957;
 }
-
 .fas{
     margin-right: 5px;
 }
-
+#dropdown > div > a:hover{
+    background-color:#fbca70!important;
+}
+.nav-link {
+    display: initial;
+    padding: 0;
+}
 body > nav > div > ul > li > a:hover{
     transition: ease 0.2s;
-    color: azure!important;
     text-decoration: none!important;
+    border-bottom: 3px solid white;
 }
-
-body > nav > div > ul.nav.navbar-nav.navbar-right > li > a > span > i{
-    margin-right: 5px;
-}
-
-body > div.container > div > div{
-    margin : 20px auto;
-}
-
 .active a{
     color: white!important;
+    border-bottom: 3px solid white;
+}
+/*Prva kolona*/
+.image-wrapper{
+    max-width: 400px;
+    height: 300px;
+}
+.image-wrapper > img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+}
+/*Pozadina*/
+.main{
+    height: -webkit-fill-available;
+}
+body > div.container > div > div{
+    transform: translateY(-10%);
+    margin : 20px auto;
+    padding:0;
+    background-color: rgba(255, 255, 255, 0.95);
+    align-self: center!important;
+}
+.panel-heading{
+    padding:10px;
+    text-align: center;
+}
+.panel-body{
+    padding:10px 15px;
 }
 
-#form-wrapper{
-    background-color: #000000c4;
-    max-width: 900px;
+.form-group{
+    width: -webkit-fill-available;
 }
+/* button ažuriraj podatke */
+.submitBtn{
+    color: rgb(4, 57, 87);
+    border: 1px solid rgb(4, 57, 87);
+    display: block;
+    margin:0 auto;
+}
+.submitBtn:hover{
+    background-color: rgb(4, 57, 87);
+    color: white;
+    border: 1px solid rgb(4, 57, 87);
+}
+/* polja za unos */
 .form-control {
     background-color: transparent;
-    color: white;
     border:none;
     border-bottom: 1px solid;
     border-radius: 0;
+    width: -webkit-fill-available;
 }
 .form-control:focus, .form-control:active {
     background: transparent;
-    color:white;
     box-shadow: none;
 }
 @-webkit-keyframes autofill {
     0%,100% {
-        color: white;
         background: transparent;
     }
 }
 
 .form-control:-webkit-autofill {
-    /* Safari support - any positive time runs instantly */
-   -webkit-animation-name: autofill;
-   -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+/* stvaranje okvira oko slike 
+brisanje overloadanog */
+input[type="file"] {
+    display: none;
 }

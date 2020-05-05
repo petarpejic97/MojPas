@@ -18,7 +18,13 @@ body > nav > div > ul > li > a{
 .fas{
     margin-right: 5px;
 }
-
+#dropdown > div > a:hover{
+    background-color:#fbca70!important;
+}
+.nav-link {
+    display: initial;
+    padding: 0;
+}
 body > nav > div > ul > li > a:hover{
     transition: ease 0.2s;
     text-decoration: none!important;
@@ -28,14 +34,29 @@ body > nav > div > ul > li > a:hover{
     color: white!important;
     border-bottom: 3px solid white;
 }
+/* Zavrsava navigation bar */
+
+/*Upozorenja*/
+#formalert,#loginalert{
+    text-align: center!important;
+    font-size: 100%;
+    background-color: red;
+    border-radius: 5px;
+    color:white;
+    padding: 15px;
+}
+#formalert > i {
+    float: left;
+}
+
+/*Pozadina forme*/
 body > div.container > div > div{
     margin : 20px auto;
     padding:0;
     background-color: rgba(255, 255, 255, 0.9);
 }
-
 .panel-heading{
-    padding:10px 0 10px 0;
+    padding:10px;
     text-align: center;
 }
 .panel-body{
@@ -166,10 +187,7 @@ input[type="file"] {
     display: inline;
 }
 
-#formalert{
-    text-align: center!important;
-    font-size: 100%;
-}
+
 .custom-control-input:checked~.custom-control-label::before {
     color: #fbca70;
     border-color: #fbca70;

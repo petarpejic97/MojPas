@@ -11,12 +11,24 @@ span > i {
 .navbar{
     min-height: 50px!important;
     padding:10px 0 10px 0!important;
-    background-color: #043957;
+    background-color: rgb(4, 57, 87);
+}
+#dropdown > div > a:hover{
+    background-color:#fbca70!important;
+}
+.nav-link {
+    display: initial;
+}
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding:0;
 }
 body > div > nav > div > ul > li > a:hover{
     transition: ease 0.2s;
     text-decoration: none!important;
     border-bottom: 3px solid white;
+}
+ul > li > a{
+    padding-bottom: 3px;
 }
 body > div > div{
     border:none;
@@ -31,6 +43,9 @@ body > div > div > input{
 .search{
     height: 55px;
     border:none;
+}
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-bottom:3px;
 }
 
 #basic-text1{
