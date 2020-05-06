@@ -60,9 +60,6 @@ if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['file'])){
                     $response['status'] = 1; 
                     $response['message'] = 'Form data submitted successfully!'; 
                 } 
-                else{
-                    echo "inesert nije uspio nez zas";
-                }
             } 
         } 
     }else{ 

@@ -32,8 +32,10 @@ body > nav > div > ul > li > a:hover{
     border-bottom: 3px solid white;
 }
 .active a{
-    color: white!important;
     border-bottom: 3px solid white;
+}
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding: 0;
 }
 /*Prva kolona*/
 .image-wrapper{
@@ -52,7 +54,7 @@ body > nav > div > ul > li > a:hover{
     height: -webkit-fill-available;
 }
 body > div.container > div > div{
-    transform: translateY(-10%);
+    transform: translateY(-1%);
     margin : 20px auto;
     padding:0;
     background-color: rgba(255, 255, 255, 0.95);

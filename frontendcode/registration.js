@@ -2,7 +2,7 @@ var nickname, email, password, confpassword;
 var flag;
 $(document).ready(function () 
 {
-    
+    setNickInNavBar();
 });
 
 function loadVariable(){
@@ -73,7 +73,6 @@ function checkEmptiFields(){
 
 }
 function checkPassword(){
-    console.log("UDEM2")
     if(password.length < 8 || !hasNumber(password)){
         alert("Zaporka mora imati minimalno 8 znakova i mora sadržavati barem jedan broj !")
 
@@ -88,7 +87,6 @@ function checkPassword(){
     console.log("Izadem2 flag je"+flag)
 
 }
-
 
 function checkNickname(){
     $.ajax({
@@ -150,4 +148,7 @@ function logout(){
     $("#login").show();
     $("#btnlogout").hide();
     location.reload();
+}
+function setNickInNavBar(nickname){
+    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
 }

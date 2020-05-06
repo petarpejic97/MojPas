@@ -1,21 +1,24 @@
 <?php
 
-    // Include the database configuration file
-function connectToDatabase(){
-    $servername='localhost';
-    $username='root';
-    $password='';
-    $dbname="web programiranje";
-    //create connecton
-    $conn = new mysqli($servername,$username,$password,$dbname);
-    //check connection
-    if($conn->connect_error){
-        die("Connection failed: " . $conn->connect_error);
-    }
-    else 
-        return $conn;
-}
+include 'connectToDatabase.php';
+
+$conn = openConnection();
+
 
 session_start();
 
+$user= new stdClass();
+$user->nickname = $_SESSION["nickname"];
+$sql =" SELECT * FROM users WHERE nickname='".$user->nickname."'";
+
+$result = $conn->query($sql);
+
+$user = array();
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $user[] = $row;
+    }
+}
+echo (json_encode($user));
+$conn->close();
 ?>

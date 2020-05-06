@@ -42,7 +42,8 @@ $(document).ready(function ()
     
     loadLocationFields()
     
-  
+    setNickInNavBar();
+
     if( localStorage.getItem("login")=="no"){
         $(':input[type="submit"]').prop("disabled",true)
         $("#loginalert").css("display","block");
@@ -64,7 +65,7 @@ $(document).ready(function ()
             processData: false,
             contentType: false,
             success:function(response){
-              console.log(response)
+              location.reload();
             }
           });
         }
@@ -265,3 +266,6 @@ var loadFile = function(event) {
       closeAllLists(e.target);
   });
   }
+  function setNickInNavBar(nickname){
+    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
+}

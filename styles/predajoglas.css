@@ -34,6 +34,9 @@ body > nav > div > ul > li > a:hover{
     color: white!important;
     border-bottom: 3px solid white;
 }
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding: 0;
+}
 /* Zavrsava navigation bar */
 
 /*Upozorenja*/

@@ -24,9 +24,9 @@ if($result -> num_rows > 0){
     $_SESSION["city"] = $rs["city"];
     $_SESSION["login"] = ["yes"];
 
-    echo "success";
+    echo $_SESSION["nickname"];
 }else{
-    echo "Prijava nije uspjela. Pokušajte ponovno.";
+    echo 0;
 }
 
 ?>

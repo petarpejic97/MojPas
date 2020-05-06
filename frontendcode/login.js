@@ -59,8 +59,8 @@ function doLogin(){
             url:'./backend/login.php',
             data:data,
             success : function(response){
-                console.log(response)
-                if(response == "success"){
+                if(response != 0){
+                    saveInLocalStorage(response)
                     saveInLocalstorage();
                     relocatePage();
                 }
@@ -82,4 +82,7 @@ function relocatePage(){
 function logout(){
     window.location.href="http://localhost/mojpas/login.html"
 
+}
+function saveInLocalStorage(nickname){
+    localStorage.setItem("nickname",nickname)
 }

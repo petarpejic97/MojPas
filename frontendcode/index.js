@@ -2,7 +2,8 @@ var login;
 
 $(document).ready(function () 
 {
-login= localStorage.getItem("login");
+    setNickInNavBar();
+    login= localStorage.getItem("login");
 
     if(login == "yes"){
         $("#login").hide();
@@ -20,4 +21,7 @@ function logout(){
 }
 function myScript(e){
     alert(e.target.attributes.id.value);       
+}
+function setNickInNavBar(nickname){
+    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
 }
