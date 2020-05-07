@@ -18,42 +18,55 @@
 
 
 <body>
-    <script src="frontendcode/loadlogout.js" type="text/javascript"></script>
-
-    <nav class="navbar navbar-expand-sm navbar-dark" >
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="./index.html">Početna</a></li>
-                <li><a href="">Pregled oglasa</a></li>
-                <li><a href="./predajoglas.html">Predaj oglas</a></li>
-
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right " >
-                <li class="nav-item dropdown" id="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Nadimak
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="./profil.html">Profil</a>
-                      <a class="dropdown-item" onclick=logout() href="#">Odjava</a>
-                    </div>
-                  </li>
-                <li id="login"><a href="./login.html"><span><i class="fas fa-sign-in-alt"></i>Prijava</span></a></li>
-                <li id="registration"><a href="./registration.html"><span><i class="fas fa-user"></i>Registracija</a></span></li>
-            </ul>
-        </div>
+    <script src="frontendcode/loadlogout.js" type="text/javascript">
+    </script>
+    
+    <nav class="navbar navbar-expand-md">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">MojPas</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationBar">
+            <span class="fas fa-align-justify" style="color:white">
+            </span>
+        </button>
+          <div class="collapse navbar-collapse" id="navigationBar">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a href="./index.html">Početna</a></li>
+                    <li><a href="">Pregled oglasa</a></li>
+                    <li><a href="./predajoglas.html">Predaj oglas</a></li>
+    
+                </ul>
+    
+                <ul class="nav navbar-nav navbar-right " >
+                    <li class="nav-item dropdown" id="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Nadimak
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="./profil.html">Profil</a>
+                          <a class="dropdown-item" onclick=logout() href="#">Odjava</a>
+                        </div>
+                      </li>
+                    <li id="login"><a href="./login.html"><span><i class="fas fa-sign-in-alt"></i>Prijava</span></a></li>
+                    <li id="registration"><a href="./registration.html"><span><i class="fas fa-user"></i>Registracija</a></span></li>
+                </ul>
+            </div>
+          </div>
+        
 
     </nav>
     
 
-        <div class="input-group md-form form-sm form-1 pl-0">
-            <div class="input-group-prepend">
-            <span class="input-group-text purple lighten-5" id="basic-text1"><i class="fas fa-search text-white"
+        <div class="row">
+            <div class="input-group-prepend col-md-9">
+            <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-white"
                 aria-hidden="true"></i></span>
+
+                <input class="form-control search" id="search" type="text" placeholder="Pretraži oglas..." aria-label="Search">
             </div>
-            <input class="form-control my-0 py-1 search" id="search" type="text" placeholder="Pretraži oglas..." aria-label="Search">
-            <button type="button" class="btn btn-primary btn-lg" id="btnnapravioglas" name="submit">Napravi oglas</button>
+            
+            <button type="button" class="btn btn-primary col-md-3" id="btnnapravioglas" name="submit">Napravi oglas</button>
         </div>
 
     </div>

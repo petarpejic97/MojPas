@@ -1,7 +1,15 @@
 body, html {
     height: 100%;
   }
-  body > div > nav > div > ul > li > a{
+  .navbar-brand{
+    color:rgb(251, 202, 112);
+    margin-left: 5px;
+    padding: 0;
+  }
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+}
+ ul > li > a{
     color: rgb(255, 255, 255)!important;
     margin-right: 15px;
 }
@@ -14,7 +22,7 @@ span > i {
     background-color: rgb(4, 57, 87);
 }
 #dropdown > div > a:hover{
-    background-color:#fbca70!important;
+    background-color:rgb(251, 202, 112)!important;
 }
 .nav-link {
     display: initial;
@@ -30,12 +38,16 @@ body > div > nav > div > ul > li > a:hover{
 ul > li > a{
     padding-bottom: 3px;
 }
-body > div > div{
+
+.row{
+    position: absolute;
     border:none;
     max-width: 600px;
+    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -120%);
+    margin-left: 0;
 }
 body > div > div > input{
     margin-right: 10px;
@@ -43,6 +55,9 @@ body > div > div > input{
 .search{
     height: 55px;
     border:none;
+}
+span > i {
+    margin:0;
 }
 .navbar-expand-sm .navbar-nav .nav-link {
     padding-bottom:3px;
@@ -52,6 +67,9 @@ body > div > div > input{
     border-color: #fbca70;
     background-color: #fbca70;
     padding: .375rem 1.2rem;
+}
+.input-group-prepend {
+    padding: 0;
 }
 #btnnapravioglas{
     color: #fbca70;
