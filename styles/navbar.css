@@ -1,0 +1,39 @@
+.navbar-brand{
+    color:rgb(251, 202, 112);
+    margin-left: 5px;
+    padding: 0!important;
+  }
+.navbar{
+    padding:10px 0!important;
+    background-color: rgb(4, 57, 87);
+}
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+}
+ ul > li > a{
+    color: rgb(255, 255, 255)!important;
+    margin-right: 15px;
+}
+ a > span > i {
+    margin-right: 5px;
+}
+#dropdown > div > a:hover{
+    background-color:rgb(251, 202, 112)!important;
+}
+.navbar-expand-md .navbar-nav .nav-link {
+    display: initial;
+    padding:0;
+}
+ul > li > a:hover{
+    transition: ease 0.2s;
+    text-decoration: none!important;
+    border-bottom: 3px solid white;
+}
+ul > li > a{
+    padding-bottom: 3px!important;
+}
+.active a{
+    color: white!important;
+    border-bottom: 3px solid white;
+}
+

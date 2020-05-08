@@ -2,43 +2,9 @@ body, html {
     background-image: url("http://localhost/MojPas/images/back2.jpg");
     height: 100%;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
   }
-body > nav > div > ul > li > a{
-    color: rgb(255, 255, 255)!important;
-    margin-right: 15px;
-    text-decoration: none;
-}
-.navbar{
-    min-height: 50px!important;
-    padding:10px 0 10px 0!important;
-    background-color: #043957;
-}
-.fas{
-    margin-right: 5px;
-}
-#dropdown > div > a:hover{
-    background-color:#fbca70!important;
-}
-.nav-link {
-    display: initial;
-    padding: 0;
-}
-body > nav > div > ul > li > a:hover{
-    transition: ease 0.2s;
-    text-decoration: none!important;
-    border-bottom: 3px solid white;
-}
-.active a{
-    color: white!important;
-    border-bottom: 3px solid white;
-}
-.navbar-expand-sm .navbar-nav .nav-link {
-    padding: 0;
-}
-/* Zavrsava navigation bar */
-
 /*Upozorenja*/
 #formalert,#loginalert{
     text-align: center!important;
@@ -53,8 +19,11 @@ body > nav > div > ul > li > a:hover{
 }
 
 /*Pozadina forme*/
-body > div.container > div > div{
-    margin : 20px auto;
+.container{
+    position: relative;
+}
+#form-wrapper{
+    margin : auto;
     padding:0;
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -78,33 +47,11 @@ body > div.container > div > div{
     border-radius: 0;
     border: 1px solid #043957;
 }
-
-.custom-combobox {
-    position: relative;
-    display: inline-block;
-  }
-  .custom-combobox-toggle {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: -1px;
-    padding: 0;
-  }
-  .custom-combobox-input {
-    margin: 0;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-  }
-
 .cijepljenje{
     display: inline-grid;
     margin-bottom: 0;
 }
 
-.container{
-    position: relative;
-}
 .form-control {
     background-color: transparent;
     border:none;
@@ -129,8 +76,7 @@ body > div.container > div > div{
     -webkit-animation-name: autofill;
     -webkit-animation-fill-mode: both;
 }
-/* stvaranje okvira oko slike 
-brisanje overloadanog */
+/* stvaranje okvira oko slike */
 input[type="file"] {
     display: none;
 }
@@ -189,8 +135,6 @@ input[type="file"] {
 .custom-file-upload, .autocomplete-items{
     display: inline;
 }
-
-
 .custom-control-input:checked~.custom-control-label::before {
     color: #fbca70;
     border-color: #fbca70;

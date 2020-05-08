@@ -1,10 +1,7 @@
-var login;
 
 $(document).ready(function () 
 {
-    login= localStorage.getItem("login");
-
-    if(login == "yes"){
+    if(localStorage.getItem("login") == "yes"){
         $("#login").hide();
         $("#dropdown").show();
     }

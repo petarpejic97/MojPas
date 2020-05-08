@@ -8,6 +8,7 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles/registracija.css?rnd=132">
+        <link rel="stylesheet" href="styles/navbar.css?rnd=132">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -15,76 +16,53 @@
 </head>
 
 <body>
+    <script src = "frontendcode/loadnavbar.js"></script>
     <script src="frontendcode/loadlogout.js" type="text/javascript"></script>
+    
+    <div id="nav-placeholder"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 " id="form-wrapper">
+                <div class="row ">
+                <div class="panel panel-primary col-md-6">
+                    <div class="panel-heading">Molimo unesite svoje podatke</div>
+                    <div class="panel-body ">
+                        <form role="Form" method="post" id="register-form" action="" accept-charset="UTF-8">
+                            <div class="form-group">
+                                <input type="text" id="nickname" name="nickname" required />
+                                <label for="nickname" id="nicknamelabel">Unesite nadimak</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="email" name="email" required/>
+                                <label for="email" id="emaillabel" >Unesite e-mail adresu</label>
 
-    <nav class="navbar navbar-expand-sm navbar-dark">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="./index.html">Početna</a></li>
-                <li><a href="">Pregled oglasa</a></li>
-                <li><a href="./predajoglas.html">Predaj oglas</a></li>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="password" id="password" name="password"  required>
+                                <label for="password" id="passwordlabel">Unesite zaporku</label>
 
-            </ul>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="confirmpassword" name="confirmpassword" required />
+                                <label for="confirmpassword" id="confirmpasswordlabel">Podvrdite zaporku</label>
 
-            <ul class="nav navbar-nav navbar-right" >
-                <li class="nav-item dropdown" id="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Nadimak
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="./profil.html">Profil</a>
-                      <a class="dropdown-item" onclick=logout() href="#">Odjava</a>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-primary btn-lg" id="submitbtn" name="submit" onclick=loadVariable()>Registracija</button>
+                            </div>
+                            
+                        </form>
                     </div>
-                  </li>
-                <li id="login"><a href="./login.html"><span><i class="fas fa-sign-in-alt"></i>Prijava</span></a></li>
-                <li class="active"  id="registration"><a href=""><span><i class="fas fa-user"></i>Registracija</a></span></li>
-            </ul>
-        </div>
-
-    </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 " id="form-wrapper">
-                    <div class="row ">
-                    <div class="panel panel-primary col-lg-6">
-                        <div class="panel-heading">Molimo unesite svoje podatke</div>
-                        <div class="panel-body ">
-                            <form role="Form" method="post" id="register-form" action="" accept-charset="UTF-8">
-                                <div class="form-group">
-                                    <input type="text" id="nickname" name="nickname" required />
-                                    <label for="nickname" id="nicknamelabel">Unesite nadimak</label>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <input type="text" id="email" name="email" required/>
-                                    <label for="email" id="emaillabel" >Unesite e-mail adresu</label>
-
-                                </div>
-                                
-                                <div class="form-group">
-                                    <input type="password" id="password" name="password"  required>
-                                    <label for="password" id="passwordlabel">Unesite zaporku</label>
-
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" id="confirmpassword" name="confirmpassword" required />
-                                    <label for="confirmpassword" id="confirmpasswordlabel">Podvrdite zaporku</label>
-
-                                </div>
-                                <div class="form-group text-center">
-                                    <button type="button" class="btn btn-primary btn-lg" id="submitbtn" name="submit" onclick=loadVariable()>Registracija</button>
-                                </div>
-                                
-                            </form>
-                        </div>
-                    </div>
-                    <div class="image-wrapper col-lg-6">
-                        <img src="./images/jamie-street-1.jpg">
-                    </div>
-                    </div>
+                </div>
+                <div class="image-wrapper col-md-6">
+                    <img src="./images/jamie-street-1.jpg">
+                </div>
                 </div>
             </div>
         </div>
+    </div>
     
     <script src="frontendcode/registration.js" type="text/javascript"></script>
 </body>

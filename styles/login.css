@@ -2,41 +2,30 @@ body, html {
     background-image: url("http://localhost/MojPas/images/blur18.jpg");
     height: 100%;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
   }
-body > nav > div > ul > li > a{
-    color: rgb(255, 255, 255)!important;
-    margin-right: 15px;
-}
-span > i {
-    margin-right: 5px;
-}
-.navbar{
-    min-height: 50px!important;
-    padding:10px 0 10px 0!important;
-    background-color: rgb(4, 57, 87);
-}
-ul > li > a:hover{
-    transition: ease 0.2s;
-    text-decoration: none!important;
-    border-bottom: 3px solid white;
-}
-.active a{
-    color: white!important;
-    border-bottom: 3px solid white;
-}
-body > div.container > div > div{
+.wrapper{
     left: 50%;
     top: 50%;
     max-width: 400px;
+    width: 100%;
     padding: 0;
     position: absolute;
     transform: translate(-50%, -50%);
 }
 .panel{
     padding: 50px;
-    background-color: rgb(255, 255, 255,0.9);
+    background-color: rgb(255, 255, 255,0.95);
+}
+.panel-heading{
+    background-color: transparent;
+    padding:10px 0 30px 0;
+    text-align: center;
+}
+.panel-body{
+    padding:10px 15px;
+    background-color: transparent;
 }
 /*animation*/
 .form-group {
@@ -70,16 +59,7 @@ input:focus~label,input:valid~label {
     color: rgb(4, 57, 87);
   }
   /*ZAVRSAVA */
-.panel-heading{
-    background-color: transparent;
-    padding:10px 0 30px 0;
-    text-align: center;
-}
-.panel-body{
-    padding:10px 15px;
-    background-color: transparent;
-    color: black;
-}
+
 #submitbtn{
     background-color: transparent;
     border:1px solid rgb(4, 57, 87);
@@ -93,18 +73,6 @@ input:focus~label,input:valid~label {
     color:white;
     border:1px solid rgb(4, 57, 87);
 }
- div.panel-body > form > div.form-group.text-center{
+.text-center{
     margin-bottom: 10px;
-}
-@-webkit-keyframes autofill {
-    0%,100% {
-        color: black;
-        background: transparent;
-    }
-}
-
-input:-webkit-autofill {
-    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
-    -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both;
 }

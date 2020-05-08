@@ -3,8 +3,15 @@ var flag;
 $(document).ready(function () 
 {
     setNickInNavBar();
+    colorizeActionLink();
 });
 
+function setNickInNavBar(nickname){
+    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
+}
+function colorizeActionLink(){
+    document.getElementById("registracija").setAttribute("class", "active");
+}
 function loadVariable(){
 
     nickname=$("#nickname").val();
@@ -33,75 +40,81 @@ function checkEmptiFields(){
     if(nickname==""){
         $("#nicknamelabel").css("color","red");
         $("#nickname").css("border-bottom","1px solid red")
-        flag = false;
+        flag = 1;
     }
     else{
-        $("#nicknamelabel").css("color","rgb(133, 133, 133)");
+        $("#nicknamelabel").css("color","rgb(4, 57, 87)");
         $("#nickname").css("border-bottom","1px solid black")
     }
 
     if(email==""){
         $("#emaillabel").css("color","red");
         $("#email").css("border-bottom","1px solid red")
-        flag = false;
+        flag = 1;
     }
     else{
-        $("#emailalert").css("display","rgb(133, 133, 133)");
+        $("#emaillabel").css("color","rgb(4, 57, 87)");
         $("#email").css("border-bottom","1px solid black")
     }
 
     if(password==""){
         $("#passwordlabel").css("color","red");
         $("#password").css("border-bottom","1px solid red")
-        flag = false;
+        flag = 1;
     }
     else{
-        $("#passwordalert").css("display","rgb(133, 133, 133)");
+        $("#passwordlabel").css("color","rgb(4, 57, 87)");
         $("#password").css("border-bottom","1px solid black")
     }
 
     if(confpassword==""){
         $("#confirmpasswordlabel").css("color","red");
         $("#confirmpassword").css("border-bottom","1px solid red")
-        flag = false;
+        flag = 1;
     }
     else{
-        $("#confirmpasswordalert").css("display","rgb(133, 133, 133)"); 
+        $("#confirmpasswordlabel").css("color","rgb(4, 57, 87)");
         $("#confirmpassword").css("border-bottom","1px solid black")
     }
-    
-
 }
 function checkPassword(){
     if(password.length < 8 || !hasNumber(password)){
         alert("Zaporka mora imati minimalno 8 znakova i mora sadržavati barem jedan broj !")
-
-        flag = false;
+        $("#passwordlabel").css("color","red");
+        $("#password").css("border-bottom","1px solid red")
+        flag = 1;
+    }
+    else{
+        $("#passwordlabel").css("color","rgb(4, 57, 87)");
+        $("#password").css("border-bottom","1px solid black")
     }
 
     if (password != confpassword){
         alert("Zaporke se ne podudaraju !")
-
-        flag = false;
+        $("#confirmpasswordlabel").css("color","red");
+        $("#confirmpassword").css("border-bottom","1px solid red")
+        flag = 1;
     }
-    console.log("Izadem2 flag je"+flag)
-
+    else{
+        $("#confirmpasswordlabel").css("color","rgb(4, 57, 87)");
+        $("#confirmpassword").css("border-bottom","1px solid black")
+    }
 }
 
 function checkNickname(){
     $.ajax({
         type:'POST',
         url: './backend/checknickname.php',
-        data:{nickname:nickname,
-            email:email},
+        data:{nickname:nickname},
         success : function(response){
             if( response == 0){
                 $("#nicknamelabel").css("color","red");
                 $("#nickname").css("border-bottom","1px solid red")
                 alert("Nadimak se već koristi. Molimo Vas unesite drugi.")
-                
             }
             else{
+                $("#nicknamelabel").css("color","rgb(4, 57, 87)");
+                $("#nickname").css("border-bottom","1px solid black")
                 checkEmail()
             }
 
@@ -113,14 +126,16 @@ function checkEmail(){
     $.ajax({
         type:'POST',
         url: './backend/checkemail.php',
-        data:{nickname:nickname,
-            email:email},
+        data:{email:email},
         success : function(response){
-            console.log("ULAZIM U 444" + response)
             if( response == 0){
                 alert("Email se već koristi. Molimo Vas unesite drugi.")
+                $("#emaillabel").css("color","red");
+                $("#email").css("border-bottom","1px solid red")
             }
             else{
+                $("#emaillabel").css("color","rgb(4, 57, 87)");
+                $("#email").css("border-bottom","1px solid black")
                 writeInDatabase()
             }
 
@@ -145,10 +160,5 @@ function hasNumber(myString) {
   }
 function logout(){
     localStorage.setItem("login","no")
-    $("#login").show();
-    $("#btnlogout").hide();
     location.reload();
-}
-function setNickInNavBar(nickname){
-    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
 }

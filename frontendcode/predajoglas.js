@@ -36,40 +36,21 @@ var dogs = [
     "Vajmarski pričar","Veliki minsterland","Veliki plavi gaskonjski gonič","Veliki šnaucer","Veliki švicarski planinski pas","Veliki vendski grifon baset","Vidraš","Zlatni retriver"];
 var filled = false;
 var naslov,cijena,cijepljenje,vrsta,opis,file;
+
 $(document).ready(function () 
 {
+  if(localStorage.getItem("login")=="yes")
+        setNickInNavBar();
+    colorizeActionLink();
+
     autocomplete(document.getElementById("vrsta"), dogs);
     
     loadLocationFields()
-    
-    setNickInNavBar();
 
-    if( localStorage.getItem("login")=="no"){
-        $(':input[type="submit"]').prop("disabled",true)
-        $("#loginalert").css("display","block");
-    }
-    else{
-        $("#loginalert").css("display","none");
-    }
-    // Submit form data via Ajax
-    $("#oglas-form").on('submit', function(e){
-      loadVariable();
-        e.preventDefault();
-        e.stopPropagation();
-  
-        if(filled == true){
-          $.ajax({
-            type: "POST",
-            url: "./backend/predajoglas.php",
-            data: new FormData(this),
-            processData: false,
-            contentType: false,
-            success:function(response){
-              location.reload();
-            }
-          });
-        }
-    });
+    loadLoginAlert()
+    
+    submitAdvertisement()
+    
 });
 function loadLocationFields(){
   $("#states").change(function () 
@@ -129,6 +110,43 @@ function loadLocationFields(){
         }
     });
 }
+function setNickInNavBar(nickname){
+  document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
+}
+function colorizeActionLink(){
+  document.getElementById("index").setAttribute("class", "active");
+}
+function loadLoginAlert(){
+  if( localStorage.getItem("login")=="no"){
+    $(':input[type="submit"]').prop("disabled",true)
+    $("#loginalert").css("display","block");
+  }
+  else{
+      $("#loginalert").css("display","none");
+  }
+}
+function submitAdvertisement(){
+  $("#oglas-form").on('submit', function(e){
+    loadVariable();
+      e.preventDefault();
+      e.stopPropagation();
+
+      if(filled == true){
+
+        $.ajax({
+          type: "POST",
+          url: "./backend/predajoglas.php",
+          data: new FormData(this),
+          processData: false,
+          contentType: false,
+          success:function(response){
+            console.log(response)
+            location.reload()
+          }
+        });
+      }
+  });
+}
 function loadVariable(){
     naslov=$("#naslov").val();
     vrsta=$("#vrsta").val();
@@ -151,13 +169,9 @@ function checkFields(){
     $("#formalert").css("display","none");
     filled = true
   }
-    
-
 }
 function logout(){
     localStorage.setItem("login","no")
-    $("#login").show();
-    $("#btnlogout").hide();
     location.reload();
 }
 var loadFile = function(event) {
@@ -266,6 +280,3 @@ var loadFile = function(event) {
       closeAllLists(e.target);
   });
   }
-  function setNickInNavBar(nickname){
-    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
-}

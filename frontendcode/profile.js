@@ -1,26 +1,27 @@
 $(document).ready(function () 
 {
-    setNickInNavBar();
+  if(localStorage.getItem("login")=="yes")
+        setNickInNavBar();
+    colorizeActionLink();
     loadData();
 });
 
 function loadData(){
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "./backend/loadprofiledata.php",
         success:function(response){
-            
+            console.log(response)
             var obj = JSON.parse(response);
-            console.log(obj[0].nickname);
-            document.getElementById("emaillabel").textContent= obj[0].email;
-            document.getElementById("nickname").value= obj[0].nickname;
-            document.getElementById("firstname").value= obj[0].firstname;
-            document.getElementById("lastname").value= obj[0].lastname;
-            document.getElementById("phone").value= obj[0].phone;
-            document.getElementById("state").value= obj[0].state;
-            document.getElementById("city").value= obj[0].city;
-            document.getElementById("gender").value= obj[0].gender;
-            
+            console.log(obj.nickname);
+            document.getElementById("emaillabel").textContent= obj.email;
+            document.getElementById("nickname").value= obj.nickname;
+            document.getElementById("firstname").value= obj.firstname;
+            document.getElementById("lastname").value= obj.lastname;
+            document.getElementById("phone").value= obj.phone;
+            document.getElementById("state").value= obj.state;
+            document.getElementById("city").value= obj.city;
+            document.getElementById("gender").value= obj.gender;
         }
       });
 }
@@ -35,7 +36,6 @@ function updateUserData(){
         data:data,
         success : function(response){
            if(response == "seccesfully"){
-               console.log("UDEM")
                location.reload()
            }
         }
@@ -44,3 +44,6 @@ function updateUserData(){
 function setNickInNavBar(nickname){
     document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
 }
+function colorizeActionLink(){
+    document.getElementById("dropdown").setAttribute("class", "active");
+  }

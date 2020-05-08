@@ -10,12 +10,15 @@ $response = array(
     'message' => 'Form submission failed, please try again.' 
 ); 
 // If form is submitted 
-if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['file'])){ 
+if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['drzava']) || isset($_POST['grad']) || isset($_POST['opis'])){ 
     // Get the submitted form data 
     $naslov = $_POST['naslov']; 
     $vrsta = $_POST['vrsta']; 
     $cijena = $_POST['cijena']; 
-    $cijepljen = $_POST['customRadio']; 
+    if(isset($_POST['customRadio']))
+        $cijepljen=$_POST['customRadio'];
+    else
+        $cijepljen="";
     $opis = $_POST['opis']; 
     $drzava = $_POST['drzava'];
     $grad = $_POST['grad'];
@@ -27,6 +30,7 @@ if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['file'])){
             
         // Upload file 
         $uploadedFile = ''; 
+        
         if(!empty($_FILES["file"]["name"])){ 
             // File path config 
             $fileName = basename($_FILES["file"]["name"]); 
@@ -61,6 +65,16 @@ if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['file'])){
                     $response['message'] = 'Form data submitted successfully!'; 
                 } 
             } 
+        }
+        else{
+            $conn = openConnection();
+            $slika = "nema-slike.png";
+            $insert = $conn->query("INSERT INTO advertisement (title,sort,price,vacinnation,description,state,city,locationDetail,filename,owner) VALUES ('".$naslov."','".$vrsta."','".$cijena."','".$cijepljen."','".$opis."','".$drzava."','".$grad."','".$detaljlokacija."','".$slika."','".$_SESSION["nickname"]."')"); 
+                echo $insert;
+                if($insert){ 
+                    $response['status'] = 1; 
+                    $response['message'] = 'Form data submitted successfully!'; 
+                } 
         } 
     }else{ 
          $response['message'] = 'Please fill all the mandatory fields .'; 

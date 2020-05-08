@@ -1,44 +1,11 @@
 body, html {
     height: 100%;
+    background-image: url("http://localhost/MojPas/images/back2.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  .navbar-brand{
-    color:rgb(251, 202, 112);
-    margin-left: 5px;
-    padding: 0;
-  }
-  .navbar-nav .dropdown-menu {
-    position: absolute;
-}
- ul > li > a{
-    color: rgb(255, 255, 255)!important;
-    margin-right: 15px;
-}
-span > i {
-    margin-right: 5px;
-}
-.navbar{
-    min-height: 50px!important;
-    padding:10px 0 10px 0!important;
-    background-color: rgb(4, 57, 87);
-}
-#dropdown > div > a:hover{
-    background-color:rgb(251, 202, 112)!important;
-}
-.nav-link {
-    display: initial;
-}
-.navbar-expand-sm .navbar-nav .nav-link {
-    padding:0;
-}
-body > div > nav > div > ul > li > a:hover{
-    transition: ease 0.2s;
-    text-decoration: none!important;
-    border-bottom: 3px solid white;
-}
-ul > li > a{
-    padding-bottom: 3px;
-}
-
 .row{
     position: absolute;
     border:none;
@@ -48,9 +15,6 @@ ul > li > a{
     left: 50%;
     transform: translate(-50%, -120%);
     margin-left: 0;
-}
-body > div > div > input{
-    margin-right: 10px;
 }
 .search{
     height: 55px;
@@ -63,12 +27,12 @@ span > i {
     padding-bottom:3px;
 }
 
-#basic-text1{
+#search-icon{
     border-color: #fbca70;
     background-color: #fbca70;
     padding: .375rem 1.2rem;
 }
-.input-group-prepend {
+.input-group {
     padding: 0;
 }
 #btnnapravioglas{
@@ -76,19 +40,7 @@ span > i {
     background-color: transparent;
     border: 3px solid;
 }
-body > nav > div > ul.nav.navbar-nav.navbar-right > li > a > span > i{
-    margin-right: 5px;
-}
-
 .active a{
     color: white!important;
     border-bottom: 3px solid white;
 }
-
-.background {
-    background-image: url("http://localhost/MojPas/images/back2.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-  }

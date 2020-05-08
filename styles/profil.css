@@ -5,38 +5,6 @@ body, html {
     background-repeat: repeat;
     background-size: cover;
   }
-  /*Navigation bar */
-body > nav > div > ul > li > a{
-    color: rgb(255, 255, 255)!important;
-    margin-right: 15px;
-    text-decoration: none;
-}
-.navbar{
-    min-height: 50px!important;
-    padding:10px 0 10px 0!important;
-    background-color: #043957;
-}
-.fas{
-    margin-right: 5px;
-}
-#dropdown > div > a:hover{
-    background-color:#fbca70!important;
-}
-.nav-link {
-    display: initial;
-    padding: 0;
-}
-body > nav > div > ul > li > a:hover{
-    transition: ease 0.2s;
-    text-decoration: none!important;
-    border-bottom: 3px solid white;
-}
-.active a{
-    border-bottom: 3px solid white;
-}
-.navbar-expand-sm .navbar-nav .nav-link {
-    padding: 0;
-}
 /*Prva kolona*/
 .image-wrapper{
     max-width: 400px;

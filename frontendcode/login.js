@@ -1,5 +1,22 @@
 var email,password,flag;
+$(document).ready(function () 
+{
+    if(localStorage.getItem("login")=="yes")
+        setNickInNavBar();
+    colorizeActionLink();
+});
 
+function logout(){
+    localStorage.setItem("login","no")
+    localStorage.setItem("nickname","")
+    location.reload();
+}
+function setNickInNavBar(nickname){
+    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
+}
+function colorizeActionLink(){
+    document.getElementById("login").setAttribute("class", "active");
+}
 function loadVariable(){
 
     email = $("#email").val();
@@ -61,28 +78,19 @@ function doLogin(){
             success : function(response){
                 if(response != 0){
                     saveInLocalStorage(response)
-                    saveInLocalstorage();
                     relocatePage();
                 }
                 else{
                     $("#passwordalert").text("Prijava nije uspjela.Pokušajte ponovno.").css("display","block"); 
-
                 }
             }
         })
     }
-    
-}
-function saveInLocalstorage(){
-    localStorage.setItem("login","yes");
 }
 function relocatePage(){
    window.location.href="http://localhost/mojpas/index.html"
 }
-function logout(){
-    window.location.href="http://localhost/mojpas/login.html"
-
-}
 function saveInLocalStorage(nickname){
+    localStorage.setItem("login","yes");
     localStorage.setItem("nickname",nickname)
 }
