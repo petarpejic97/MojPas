@@ -36,7 +36,7 @@ if(isset($_POST['naslov']) || isset($_POST['cijena']) || isset($_POST['drzava'])
             $fileName = basename($_FILES["file"]["name"]); 
             $targetFilePath = $uploadDir . $fileName; 
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION); 
-            $uploadedFile = $fileName;
+            $uploadedFile = $fileName;            
             // Allow certain file formats 
             $allowTypes = array('pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'); 
             if(in_array($fileType, $allowTypes)){ 

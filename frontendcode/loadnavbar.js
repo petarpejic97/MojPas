@@ -1,4 +1,4 @@
- $.get("navbar.html", function(data){
+ $.get("navbar.php", function(data){
      $("#nav-placeholder").replaceWith(data);
  });
  

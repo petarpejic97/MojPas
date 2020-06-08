@@ -88,7 +88,7 @@ function doLogin(){
     }
 }
 function relocatePage(){
-   window.location.href="http://localhost/mojpas/index.html"
+   window.location.href="http://localhost/mojpas/index.php"
 }
 function saveInLocalStorage(nickname){
     localStorage.setItem("login","yes");

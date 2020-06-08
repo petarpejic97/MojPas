@@ -3,6 +3,7 @@ $(document).ready(function ()
     if(localStorage.getItem("login")=="yes")
         setNickInNavBar();
     colorizeActionLink();
+
 });
 
 function logout(){
