@@ -68,7 +68,7 @@ h2{
 .dog-box:hover img{
 	filter: grayscale(0);
 }
-#title{
+#dog-btn{
     background-color: #fbca70;
     width: -webkit-fill-available;
     margin-bottom: 20px;

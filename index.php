@@ -41,7 +41,7 @@
 
             error_reporting(E_ERROR | E_PARSE);
 
-            $sql = "SELECT * FROM advertisement";
+            $sql = "SELECT * FROM advertisement LIMIT 9";
             $result = $conn->query($sql);
             if($result->num_rows > 0){
                 while($row = $result->fetch_assoc()){ 
@@ -52,7 +52,7 @@
                         echo '<div class="dog-box">';   
                             echo '<img class="dog-img" src="uploads/'.$row['filename'].'" alt="Dog Box 1">';
                         echo "</div>";
-                        echo "<button id='title' class='btn mb-4 btn-lg'> $dog->title </button>";
+                        echo "<button id='dog-btn' class='btn mb-4 btn-lg'>$dog->title</button>";
                     echo "</div>";
                 }
             }
