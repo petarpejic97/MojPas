@@ -1,0 +1,90 @@
+body, html {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background: url("http://localhost/MojPas/images/broken-back2.jpg") no-repeat center;
+  }
+.container{
+    height: 100vh;
+    display: flex;
+    max-width: 1035px;
+    background-color: white;
+}
+.row{
+    width: -webkit-fill-available;
+}
+h2{
+    text-align: center;
+    padding: 10px;
+}
+#filter-form{
+    padding: 5px;
+    border: 2px solid rgb(251, 202, 112);
+}
+.filter-wrapper{
+    padding:0;
+    top: 25%;
+}
+.filter-title{
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(251, 202, 112);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.form-control{
+    height: 30px;
+    padding:0px;
+}
+input[type=submit]{
+    line-height: 20px;
+    background-color:rgb(251, 202, 112);
+    display: block;
+    margin: auto;
+}
+.content-wrapper{
+    height: 92%;
+    overflow: auto;
+}
+h5{
+    cursor: pointer;
+}
+.pagination {
+    margin: auto;
+    width: fit-content;
+  }
+  
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+  
+.pagination a.active {
+    background-color: rgb(4, 57, 87);;
+    color: white;
+    border: 1px solid rgb(4, 57, 87);;
+}
+  
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+#fieldAlert{
+    margin-bottom: .5rem;
+    text-align: center;
+    font-size: 90%;
+
+}
+@media only screen and (max-width: 768px) {
+    .filter-wrapper {
+        top: 0;
+    }
+    body{
+        overflow: auto;
+    }
+}

@@ -6,7 +6,6 @@ $(document).ready(function ()
     colorizeActionLink();
     
     var buttons = document.querySelectorAll("#dog-btn")
-    console.log(buttons)
     for (i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {
             let title = this.innerHTML

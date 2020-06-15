@@ -3,7 +3,7 @@ function openConnection(){
     $servername='localhost';
     $username='root';
     $password='';
-    $dbname="web programiranje";
+    $dbname="mojpas";
     //create connecton
     $conn = new mysqli($servername,$username,$password,$dbname);
     //check connection

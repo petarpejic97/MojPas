@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <title>Moj Pas</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/navbar.css?rnd=132">
+        <link rel="stylesheet" href="styles/pregledoglasa.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+<body>
+    <script src = "frontendcode/loadnavbar.js"></script>    
+    <div id="nav-placeholder"></div>
+    <script src = "frontendcode/loadlogout.js"></script> 
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 filter-wrapper">
+                <div class="filter-title">
+                    Filtriraj rezultate
+                </div>
+                <form role="Form" method="post" id="filter-form"  accept-charset="UTF-8" >
+                    <div class="form-group">
+                        <label for="states">Odaberite državu</label>
+                        <select id="states" class="form-control"  name="drzava">
+                            <option value="">-- Odaberite državu --</option>
+                            <option value="Hrvatska">Hrvatska</option>
+                            <option value="BiH">BiH</option>
+                            <option value="Srbija">Srbija</option>
+                            <option value="Slovenija">Slovenija</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Odaberite grad</label>
+                        <select id="city" class="form-control" name="grad">
+                            <option value="">-- Odaberite grad --</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="cijena">Cijena (€)</label>
+                        <div class="range">
+                            Od <input id="od"type="text" name="od" class="sliderValue" style="width: 30%; height: 30px;" data-index="0"  />
+                            Do <input id="do"type="text" name="do" class="sliderValue" style="width: 30%; height: 30px;" data-index="1"  />
+                        </div>
+                        
+                    </div>
+                    <div class="invalid-feedback" id="fieldAlert">Sva polja su prazna !</div>
+
+                    <div class="form-group">
+                        <input type="submit" name="submit" class="btn submitBtn" value="FILTRIRAJ"/>                            
+                    </div>
+                </form>
+            </div>
+            <div class="content-wrapper col-md-9">
+                <h2>Pregled oglasa</h2>
+                <div class="advertisement-wrapper">
+                </div>
+                <div class="alert alert-secondary no-advertisements" role="alert" style="display: none;">Trenutno nema oglasa koji zadovoljavaju postavljene kriterije pretrage.</div>
+                <div id="pagination" class="pagination">
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="frontendcode/pregledoglasa.js" type="text/javascript"></script>
+</body>
+</html>

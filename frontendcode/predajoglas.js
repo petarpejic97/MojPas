@@ -114,7 +114,7 @@ function setNickInNavBar(nickname){
   document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
 }
 function colorizeActionLink(){
-  document.getElementById("index").setAttribute("class", "active");
+  document.getElementById("predajoglas").setAttribute("class", "active");
 }
 function loadLoginAlert(){
   if( localStorage.getItem("login")=="no"){
