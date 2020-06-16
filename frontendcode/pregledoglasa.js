@@ -9,7 +9,12 @@ $(document).ready(function ()
 
     loadLocationFields()
 
-    loadData();
+    if(localStorage.getItem("search")==""){
+        loadData();
+    }
+    else{
+        loadByTerm(localStorage.getItem("search"));
+    }
 
     filterButton();
   
@@ -109,10 +114,10 @@ function loadContent(number){
 }
 function setNickInNavBar(nickname){
     document.getElementById("navbarDropdownMenuLink").innerHTML = nickname;
-  }
+}
 function colorizeActionLink(){
     document.getElementById("pregledoglasa").setAttribute("class", "active");
-  }
+}
 function loadLocationFields(){
     $("#states").change(function () 
       {
@@ -175,7 +180,36 @@ function loadLocationFields(){
               <option value='	Nova Gorica'>  Nova Gorica </option>");
           }
       });
-  }
+}
+function loadByTerm(term){
+    $.ajax({
+        type: "POST",
+        url: "./backend/getAdvertisementByTerm.php",
+        data:{term:term},
+        success: function(response)
+        {
+          var advertisements = JSON.parse(response)
+          var pageNumber = Math.trunc((advertisements.length/10)+1);
+          
+          var AdCounter=0;
+          
+          var tempArray=[];
+          for(let i = 0; i< advertisements.length; i++){
+                if(AdCounter==10){
+                    AdArray.push(tempArray)
+                    AdCounter=0
+                    tempArray=[];
+                }
+                if(i==advertisements.length-1){
+                    AdArray.push(tempArray)
+                }
+            AdCounter++
+            tempArray.push(advertisements[i])
+            }
+        createPage(pageNumber)
+        }
+    })
+}
 function loadData(){
 
     $.ajax({

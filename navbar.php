@@ -1,3 +1,4 @@
+<script src="frontendcode/navbarFunctions.js"></script>
 <nav class="navbar navbar-expand-md">
     <div class="navbar-header">
         <a class="navbar-brand" href="./index.html">MojPas</a>
@@ -10,7 +11,7 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav navbar-left">
                 <li id="index"><a href="./index.php">Početna</a></li>
-                <li id="pregledoglasa"><a href="pregledoglasa.html">Pregled oglasa</a></li>
+                <li id="pregledoglasa"><a href="pregledoglasa.html" >Pregled oglasa</a></li>
                 <li id="predajoglas"><a href="./predajoglas.html">Predaj oglas</a></li>
             </ul>
 

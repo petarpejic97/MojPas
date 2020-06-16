@@ -5,6 +5,12 @@ $(document).ready(function ()
         setNickInNavBar();
     colorizeActionLink();
     
+    $("#trazi").click(function(){
+        let term = $(".search").val()
+        localStorage.setItem("search",term)
+        window.location="./pregledoglasa.html"
+    })
+
     var buttons = document.querySelectorAll("#dog-btn")
     for (i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", function() {

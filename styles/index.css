@@ -42,10 +42,10 @@ span > i {
 .input-group {
     padding: 0;
 }
-#btnnapravioglas{
-    color: #fbca70;
-    background-color: transparent;
-    border: 3px solid;
+#trazi{
+    background-color: #fbca70;
+    color: white;
+    border: 3px solid #fbca70;
 }
 .active a{
     color: white!important;

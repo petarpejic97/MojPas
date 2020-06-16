@@ -27,7 +27,7 @@
                 aria-hidden="true"></i></span>
                 <input class="form-control search" id="search" type="text" placeholder="Pretraži oglas..." aria-label="Search">
             </div>
-            <button type="button" class="btn btn-primary col-md-3" id="btnnapravioglas" name="submit">Napravi oglas</button>
+            <button type="button" class="btn btn-primary col-md-3" id="trazi" name="submit">Pretraži</button>
         </div>
     </div>
 
