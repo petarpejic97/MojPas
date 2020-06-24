@@ -1,19 +1,25 @@
 var email,password,flag;
 $(document).ready(function () 
 {
-    if(localStorage.getItem("login")=="yes")
-        setNickInNavBar();
     colorizeActionLink();
 });
 
 function logout(){
+    $.ajax({
+        type:'GET',
+        url: './backend/logOut.php',
+        success : function(response){
+           if(response == "seccesfully"){
+               location.reload()
+           }
+        }
+    })
     localStorage.setItem("login","no")
     localStorage.setItem("nickname","")
     location.reload();
+
 }
-function setNickInNavBar(nickname){
-    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
-}
+
 function colorizeActionLink(){
     document.getElementById("login").setAttribute("class", "active");
 }

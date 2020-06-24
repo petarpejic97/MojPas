@@ -1,7 +1,5 @@
 $(document).ready(function () 
 {
-  if(localStorage.getItem("login")=="yes")
-        setNickInNavBar();
     colorizeActionLink();
     loadData();
 });
@@ -41,9 +39,18 @@ function updateUserData(){
         }
     })
 }
-function setNickInNavBar(nickname){
-    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
-}
 function colorizeActionLink(){
     document.getElementById("dropdown").setAttribute("class", "active");
+  }
+function logout(){
+    $.ajax({
+        type:'GET',
+        url: './backend/logOut.php',
+        success : function(response){
+            console.log(response)
+            localStorage.setItem("login","no")
+            localStorage.setItem("nickname","")
+            location.reload()
+        }
+    })
   }

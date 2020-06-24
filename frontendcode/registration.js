@@ -2,13 +2,9 @@ var nickname, email, password, confpassword;
 var flag;
 $(document).ready(function () 
 {
-    setNickInNavBar();
     colorizeActionLink();
 });
 
-function setNickInNavBar(nickname){
-    document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
-}
 function colorizeActionLink(){
     document.getElementById("registracija").setAttribute("class", "active");
 }
@@ -159,6 +155,14 @@ function hasNumber(myString) {
     return /\d/.test(myString);
   }
 function logout(){
-    localStorage.setItem("login","no")
-    location.reload();
-}
+    $.ajax({
+        type:'GET',
+        url: './backend/logOut.php',
+        success : function(response){
+            console.log(response)
+            localStorage.setItem("login","no")
+            localStorage.setItem("nickname","")
+            location.reload()
+        }
+    })
+  }

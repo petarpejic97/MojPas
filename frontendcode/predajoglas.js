@@ -39,8 +39,7 @@ var naslov,cijena,cijepljenje,vrsta,opis,file;
 
 $(document).ready(function () 
 {
-  if(localStorage.getItem("login")=="yes")
-        setNickInNavBar();
+
     colorizeActionLink();
 
     autocomplete(document.getElementById("vrsta"), dogs);
@@ -110,9 +109,6 @@ function loadLocationFields(){
         }
     });
 }
-function setNickInNavBar(nickname){
-  document.getElementById("navbarDropdownMenuLink").innerHTML = localStorage.getItem("nickname");
-}
 function colorizeActionLink(){
   document.getElementById("predajoglas").setAttribute("class", "active");
 }
@@ -124,6 +120,18 @@ function loadLoginAlert(){
   else{
       $("#loginalert").css("display","none");
   }
+}
+function logout(){
+  $.ajax({
+      type:'GET',
+      url: './backend/logOut.php',
+      success : function(response){
+          console.log(response)
+          localStorage.setItem("login","no")
+          localStorage.setItem("nickname","")
+          location.reload()
+      }
+  })
 }
 function submitAdvertisement(){
   $("#oglas-form").on('submit', function(e){
@@ -170,10 +178,7 @@ function checkFields(){
     filled = true
   }
 }
-function logout(){
-    localStorage.setItem("login","no")
-    location.reload();
-}
+
 var loadFile = function(event) {
     
     var output = document.getElementById('output');
@@ -183,7 +188,18 @@ var loadFile = function(event) {
     }
     $("#tekstnaslici").text("")
   };
-
+  function logout(){
+    $.ajax({
+        type:'GET',
+        url: './backend/logOut.php',
+        success : function(response){
+            console.log(response)
+            localStorage.setItem("login","no")
+            localStorage.setItem("nickname","")
+            location.reload()
+        }
+    })
+  }
   function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/

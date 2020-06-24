@@ -7,8 +7,12 @@
     padding:10px 0!important;
     background-color: rgb(4, 57, 87);
 }
-  .navbar-nav .dropdown-menu {
+.navbar-nav .dropdown-menu {
     position: absolute;
+    left:unset;
+}
+.dropdown-item{
+    color:black!important;
 }
  ul > li > a{
     color: rgb(255, 255, 255)!important;
@@ -33,7 +37,7 @@ ul > li > a{
     padding-bottom: 3px!important;
 }
 .active a{
-    color: white!important;
+    color: white;
     border-bottom: 3px solid white;
 }
 

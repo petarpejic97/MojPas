@@ -3,8 +3,6 @@ var currentAction;
 var currentPage;
 $(document).ready(function () 
 {
-  if(localStorage.getItem("login")=="yes")
-        setNickInNavBar(localStorage.getItem("nickname"));
     colorizeActionLink();
 
     loadLocationFields()
@@ -347,4 +345,16 @@ function setPaginationAndAdversimentVisibliti(adswrapper,pag,noads){
     $(".pagination").css("display",pag)
     $(".no-advertisements").css("display",noads)
 }
+function logout(){
+    $.ajax({
+        type:'GET',
+        url: './backend/logOut.php',
+        success : function(response){
+            console.log(response)
+            localStorage.setItem("login","no")
+            localStorage.setItem("nickname","")
+            location.reload()
+        }
+    })
+  }
     

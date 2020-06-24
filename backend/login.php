@@ -22,8 +22,7 @@ if($result -> num_rows > 0){
     $_SESSION["nickname"] = $rs["nickname"];
     $_SESSION["phone"] = $rs["phone"];
     $_SESSION["drzava"] = $rs["state"];
-    $_SESSION["login"] = "yes";
-
+    $_SESSION["login"] = "yes";    
     echo $_SESSION["nickname"];
 }else{
     echo 0;

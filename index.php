@@ -17,8 +17,7 @@
 </head>
 <body>
     <script src = "frontendcode/loadnavbar.js"></script>    
-    <div id="nav-placeholder"></div>
-    <script src = "frontendcode/loadlogout.js"></script> 
+    <div id="nav-placeholder"></div> 
     
     <div id="background">
         <div class="row searcher">
