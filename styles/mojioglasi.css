@@ -1,0 +1,51 @@
+body, html {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    background: url("http://localhost/MojPas/images/broken-back2.jpg") no-repeat center;
+  }
+.container{
+    height: 100vh;
+    max-width: 1035px;
+    background-color: white;
+}
+.row{
+    width: -webkit-fill-available;
+}
+h2{
+    text-align: center;
+    padding: 10px;
+}
+ul{
+    list-style-type: none; /* Remove bullets */
+}
+#advertisement-wrapper{
+    height: 85%;
+    overflow: auto;
+}
+.advertisiment-item{
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    position: relative;
+}
+.advertisiment-item:hover {
+    background-color: rgb(212, 221, 226);
+  }
+  
+.fa{
+    margin-right: 5px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 5px;
+}

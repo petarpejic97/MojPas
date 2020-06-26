@@ -22,7 +22,6 @@ function setListenerOnA(){
     var a = page.querySelectorAll("a")
     for (i = 0; i < a.length; i++) {
         a[i].addEventListener("click", function() {
-            console.log(a.length)
             if(this.innerHTML == "&lt;&lt;"){
                 if(currentAction==1){
                     return

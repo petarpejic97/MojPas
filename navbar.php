@@ -25,6 +25,7 @@
                       </a>
                       <div class="dropdown-menu">
                           <a class="dropdown-item" href="./profil.html">Profil</a>
+                          <a class="dropdown-item" href="./mojioglasi.html">Moji oglasi</a>
                           <a class="dropdown-item" onclick=logout() href="#">Odjava</a>
                       </div>
                       </li>';
