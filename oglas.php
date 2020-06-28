@@ -23,7 +23,7 @@
         <div class="row">
         <?php
             include 'backend/connectToDatabase.php';
-
+            session_start();
             $conn = openConnection();
 
             error_reporting(E_ERROR | E_PARSE);
@@ -92,8 +92,80 @@
                 echo '<img class="dog-img" src="uploads/'.$dog->filename.'" alt="Dog Box 1">';
             echo '</div>';
             echo    '<div class=contact-wrapper>
-                        <div>Kontakt</div>
-                        <div>'.$user->nickname.'</div>
+                        <div class="star-wrapper"><div>'.$user->nickname  .'</div>
+                            <div class="user-rating">';
+
+                            $sql = "SELECT * FROM ratings WHERE rated_user='".$user->nickname."'";
+
+                            $result = $conn->query($sql);
+
+                            $counter = 0;
+                            $sum = 0;
+
+                            if($result->num_rows > 0){
+                                
+                                while($row = $result->fetch_assoc()){
+                                    $counter++;
+                                    $sum += $row["rate"];
+                                }
+                               if(round($sum/$counter, 2) == 1){
+                                    echo '<label><i class="fa fa-star" style="font-size:35px;color:red"></i></label>'.round($sum/$counter, 2)."/5";
+                                }
+                                else if(round($sum/$counter, 2) >1 && round($sum/$counter, 2) <= 2){
+                                    echo '<label><i class="fa fa-star" style="font-size:35px;color:#ff6300"></i></label>'.round($sum/$counter, 2)."/5";
+                                }
+                                else if(round($sum/$counter, 2) >2 && round($sum/$counter, 2) <= 3){
+                                    echo '<label><i class="fa fa-star" style="font-size:35px;color:#f6ff00"></i></label>'.round($sum/$counter, 2)."/5";
+                                }
+                                else if(round($sum/$counter, 2) >3 && round($sum/$counter, 2) <= 4){
+                                    echo '<label><i class="fa fa-star" style="font-size:35px;color:#87c14e"></i></label>'.round($sum/$counter, 2)."/5";
+                                }
+                                else if(round($sum/$counter, 2) >4 && round($sum/$counter, 2) <= 5){
+                                    echo '<label><i class="fa fa-star" style="font-size:35px;color:#15e016"></i></label>'.round($sum/$counter, 2)."/5";
+                                }
+                                //echo round($sum/$counter, 2);
+                                
+                            }
+                            else{
+                                echo '<label><i class="fa fa-star" style="font-size:35px;color:black"></i></label>0/5';
+                            }
+                        echo '</div>
+                        </div>
+                        <div class="ocjenite">Ocjenite oglašivača: </div>';
+                        $sql = "SELECT * FROM ratings 
+                        WHERE rated_user='".$user->nickname."' AND rated_by='".$_SESSION["nickname"]."'";
+
+                        $result = $conn->query($sql);
+                        
+                        if($result->num_rows > 0){
+                            $row = $result->fetch_assoc();
+                             
+                            echo '<div class="rating">';
+                            
+                            for($i=5; $i>0; $i--){
+                                if($i == $row["rate"]){
+                                    echo '<input type="radio" name="rating" value="'.$i.'" id="'.$i.'" checked>
+                                <label for="'.$i.'">☆</label>';
+                                }
+                                else{
+                                    echo '<input type="radio" name="rating" value="'.$i.'" id="'.$i.'">
+                                    <label for="'.$i.'">☆</label>';
+                                }
+                                
+                            }
+                            echo '</div>';
+                                 
+                        }
+                        else{
+                            echo '<div class="rating">' ;
+                            for($i=5; $i>0; $i--){
+                                echo '<input type="radio" name="rating" value="'.$i.'" id="'.$i.'">
+                                <label for="'.$i.'">☆</label>';
+                            }
+                            echo '</div>';
+                        }
+                        
+                        echo '<div>Kontakt</div>
                         <div>'.$user->email.'</div>
                         <div>'.$user->mobilephone.'</div>
                     </div>
@@ -103,6 +175,6 @@
         </div>
         </div>
 
-    <!--<script src="frontendcode/oglas.js" type="text/javascript"></script>-->
+    <script src="frontendcode/oglas.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <script src="frontendcode/navbarFunctions.js"></script>
 <nav class="navbar navbar-expand-md">
     <div class="navbar-header">
-        <a class="navbar-brand" href="./index.html">MojPas</a>
+        <a class="navbar-brand" href="./index.php">MojPas</a>
     </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigationBar">
         <span class="fas fa-align-justify" style="color:white">

@@ -16,8 +16,8 @@ h2{
 }
 
 .image-wrapper{
-    width: 500px;
-    height: 500px;
+    max-width: 500px;
+    max-height: 500px;
 }
 .dog-img{
     width: 100%;
@@ -51,4 +51,52 @@ h2,.image-wrapper{
 }
 .contact-wrapper > div{
     padding:20px;
+}
+.rating,.ocjenite{
+    padding-bottom: 0!important;
+    padding-top: 0!important;
+}
+div.user-rating > label > i {
+    transform: translate(-5px,2px);
+}
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+.star-wrapper{
+    padding-bottom: 0!important;
+}
+.rating>input {
+    display: none
+}
+.user-rating{
+    font-size: x-large;
+}
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 35px;
+    color: #332e16;
+    cursor: pointer;
+    margin-bottom:0
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
 }
