@@ -49,6 +49,9 @@ h2,.image-wrapper{
     text-align: center;
     border-radius: 15px;
 }
+div.contact-wrapper > div:nth-child(4), div.contact-wrapper > div:nth-child(5){
+    padding-bottom: 0;
+}
 .contact-wrapper > div{
     padding:20px;
 }
