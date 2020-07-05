@@ -4,8 +4,12 @@ include 'connectToDatabase.php';
 
 $conn = openConnection();
 
-
-$sql =" SELECT * FROM advertisement WHERE owner='".$_SESSION["nickname"]."'";
+if($_SESSION["email"]=="petar@gmail.com"){
+    $sql =" SELECT * FROM advertisement ";
+}
+else{
+    $sql =" SELECT * FROM advertisement WHERE owner='".$_SESSION["nickname"]."'";
+}
 
         
 $advertisements= Array();

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <title>Moj Pas</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="styles/navbar.css?rnd=132">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/promjenilozinku.css?rnd=132">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <script src = "frontendcode/loadnavbar.js"></script>    
+    <div id="nav-placeholder"></div>
+    
+    <div class="container">
+        <div class="row main" >
+            <div class="col-lg-6 align-self-center" >
+                <div class="panel panel-primary" style="padding:30px">
+                    <div class="panel-body">
+                        <form role="Form" method="post" id="pass-form"  accept-charset="UTF-8" >
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="oldpass">Stara zaporka:</label>
+                                    <input type="text" id="oldpass" class="form-control" name="oldpass">    
+                                </div>
+                                <div class="form-group">
+                                    <label for="newpass">Nova zaporka:</label>
+                                    <input type="text" id="newpass" class="form-control" name="newpass">    
+                                </div>
+                                <div class="form-group">
+                                    <label for="againpass">Nova zaporka:</label>
+                                    <input type="text" id="againpass" class="form-control" name="againpass">    
+                                </div>
+                            </div>
+                            <div class="invalid-feedback" id="passwordalert"> </div>
+
+                            <div class="form-group buttons">
+                                <input type="button" name="submit" class="btn submitBtn" onclick=updatePassword() value="Ažuriraj podatke"/>                            
+                            </div>
+                        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="frontendcode/promjeniLozinku.js" type="text/javascript"></script>
+
+</body>
+</html>

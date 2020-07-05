@@ -27,7 +27,7 @@ function loadData(){
 function updateUserData(){
     
     var data = $("#user-form").serialize();
-    console.log(data)
+
     $.ajax({
         type:'POST',
         url: './backend/updateUserData.php',

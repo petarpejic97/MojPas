@@ -146,7 +146,13 @@ function writeInDatabase(){
         data:data,
         success : function(response){
             if(response == "succesfully"){
-                window.location="./login.html"
+                if(localStorage.getItem("login")=="yes"){
+                    location.reload()
+                }
+                else{
+                    window.location="./login.html"
+                }
+                
             }
         }
     })
@@ -159,7 +165,7 @@ function logout(){
         type:'GET',
         url: './backend/logOut.php',
         success : function(response){
-            console.log(response)
+            
             localStorage.setItem("login","no")
             localStorage.setItem("nickname","")
             location.reload()

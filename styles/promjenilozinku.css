@@ -39,6 +39,11 @@ body > div.container > div > div{
 .form-group{
     width: -webkit-fill-available;
 }
+/*error message*/
+.invalid-feedback{
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
 /* button ažuriraj podatke */
 .submitBtn{
     color: rgb(4, 57, 87);
