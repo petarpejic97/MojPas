@@ -1,11 +1,16 @@
 $(document).ready(function () 
 {
-    colorizeActionLink();
+    setTimeout(colorizeActionLink(), 100)
+    
     
     $("#trazi").click(function(){
+
         let term = $(".search").val()
-        localStorage.setItem("search",term)
-        window.location="./pregledoglasa.html"
+        if(term.length > 2){
+            localStorage.setItem("search",term)
+            window.location="./pregledoglasa.html"
+        }
+        
     })
 
     var buttons = document.querySelectorAll("#dog-btn")

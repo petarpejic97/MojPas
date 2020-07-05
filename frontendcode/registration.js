@@ -2,7 +2,7 @@ var nickname, email, password, confpassword;
 var flag;
 $(document).ready(function () 
 {
-    colorizeActionLink();
+    setTimeout(colorizeActionLink(), 100)
 });
 
 function colorizeActionLink(){

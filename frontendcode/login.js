@@ -1,7 +1,7 @@
 var email,password,flag;
 $(document).ready(function () 
 {
-    colorizeActionLink();
+    setTimeout(colorizeActionLink(), 100)
 });
 
 function logout(){

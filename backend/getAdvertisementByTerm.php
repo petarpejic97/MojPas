@@ -6,7 +6,7 @@ $conn = openConnection();
 $term = $_POST['term'];
 
 $sql = "SELECT * FROM advertisement 
-        WHERE title LIKE '%$term%' OR sort LIKE '%$term%'";
+        WHERE title LIKE '%$term%' OR sort LIKE '%$term%' OR description LIKE '%$term%'";
 
 $advertisements= Array();
 

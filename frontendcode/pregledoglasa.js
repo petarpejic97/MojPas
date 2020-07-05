@@ -3,7 +3,7 @@ var currentAction;
 var currentPage;
 $(document).ready(function () 
 {
-    colorizeActionLink();
+    setTimeout(colorizeActionLink(), 100)
 
     loadLocationFields()
 

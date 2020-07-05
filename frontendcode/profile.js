@@ -1,6 +1,6 @@
 $(document).ready(function () 
 {
-    colorizeActionLink();
+    setTimeout(colorizeActionLink(), 100)
     loadData();
 });
 

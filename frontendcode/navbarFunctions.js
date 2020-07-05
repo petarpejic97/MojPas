@@ -9,7 +9,7 @@ function LiListener(){
 
     for (i = 0; i < as.length; i++) {
         as[i].addEventListener("click", function(e) {
-            if(e.path[0].id!="navbarDropdownMenuLink"){
+            if(e.path[0].id != "navbarDropdownMenuLink"){
                 localStorage.setItem("search","")
             }
         });
